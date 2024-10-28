@@ -113,13 +113,15 @@ class PamongController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pamong $pamong)
+    public function destroy($id)
     {
+        $pamong = Pamong::findOrFail($id);
+
         if ($pamong->foto) {
-            Storage::delete([$pamong->foto]);
+            Storage::disk('public')->delete($pamong->foto);
         }
 
-        Pamong::destroy($pamong->id);
+        $pamong->delete();
 
         Alert::success('Success', 'Data pemerintah berhasil dihapus');
 
