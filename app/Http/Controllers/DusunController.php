@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Rw;
 use App\Models\Dusun;
+use App\Models\Penduduk;
 use App\Models\Pengaturan;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -17,9 +18,24 @@ class DusunController extends Controller
     {
         $setting = Pengaturan::first();
 
+        $dusun = Dusun::withCount('rw')->withCount('rt')->withCount('keluarga')->withCount([
+            'keluarga as jumlah_kepala_keluarga_laki_laki' => function ($query) {
+                $query->whereHas('anggota', function ($query) {
+                    $query->where('jenis_kelamin_id', '1')
+                        ->where('hubungan_keluarga_id', '1');
+                });
+            },
+            'keluarga as jumlah_kepala_keluarga_perempuan' => function ($query) {
+                $query->whereHas('anggota', function ($query) {
+                    $query->where('jenis_kelamin_id', '2')
+                        ->where('hubungan_keluarga_id', '1');
+                });
+            }
+        ])->paginate(8);
+
         return view('dashboard.dusun.index', [
             'page'  => $setting->sebutan_dusun,
-            'dusun' => Dusun::orderBy('nama')->withCount('rw')->withCount('rt')->withCount('keluarga')->paginate(6)
+            'dusun' => $dusun
         ]);
     }
 
@@ -65,17 +81,36 @@ class DusunController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Dusun $dusun)
+    public function edit($id)
     {
-        //
+        $setting = Pengaturan::first();
+        $dusun = Dusun::findOrFail($id);
+        $penduduk = Penduduk::orderBy('nama')->get();
+
+        return view('dashboard.dusun.edit', [
+            'page'      =>  'Edit Data ' . $setting->sebutan_dusun . ' ' . $dusun->nama,
+            'dusun'     =>  $dusun,
+            'penduduk'  =>  $penduduk
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Dusun $dusun)
+    public function update(Request $request, $id)
     {
-        //
+        $setting = Pengaturan::first();
+
+        $request->validate([
+            'penduduk_id' => 'nullable|exists:penduduks,id'
+        ]);
+
+        $dusun = Dusun::findOrFail($id);
+        $dusun->penduduk_id = $request->penduduk_id;
+        $dusun->save();
+
+        Alert::success('Success', 'Data ' . $setting->sebutan_dusun . ' berhasil diperbaharui');
+        return redirect()->route('wilayah.index');
     }
 
     /**

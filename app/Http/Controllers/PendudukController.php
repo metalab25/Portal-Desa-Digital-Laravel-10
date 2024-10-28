@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Agama;
 use App\Models\Cacat;
 use App\Models\Dusun;
@@ -160,6 +161,12 @@ class PendudukController extends Controller
     public function show($id)
     {
         $penduduk = Penduduk::findOrFail($id);
+
+        // Hitung tanggal 17 tahun setelah tanggal lahir
+        $tanggalWajibKTP = Carbon::parse($penduduk->tanggal_lahir)->addYears(17);
+
+        // Tentukan status wajib KTP berdasarkan apakah tanggal hari ini sudah lewat dari atau sama dengan tanggal wajib KTP
+        $penduduk->status_ktp = $tanggalWajibKTP->isPast() ? 'Wajib KTP' : 'Belum Wajib KTP';
 
         return view('dashboard.penduduk.details', [
             'page'      => 'Biodata ' . $penduduk->nama,

@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Models\Rt;
 use App\Models\Rw;
 use App\Models\Keluarga;
-use App\Models\JenisKelamin;
+use App\Models\Penduduk;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -29,5 +29,10 @@ class Dusun extends Model
     public function keluarga()
     {
         return $this->hasMany(Keluarga::class);
+    }
+
+    public function penduduk()
+    {
+        return $this->belongsTo(Penduduk::class);
     }
 }

@@ -32,7 +32,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/desa/wilayah') }}"
+                            <a href="{{ route('wilayah.index') }}"
                                 class="nav-link {{ request()->segment(2) == 'wilayah' ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-map"></i>
                                 <p>Wilayah {{ $setting->sebutan_desa }}</p>
