@@ -1,0 +1,101 @@
+div:where(.swal2-container) div:where(.swal2-popup) {
+    border-radius: 1rem !important;
+}
+
+div:where(.swal2-container) h2:where(.swal2-title) {
+    font-family: 'Outfit', sans-serif;
+}
+
+div:where(.swal2-container) .swal2-html-container {
+    margin: 0.1em 1.6em .1em !important;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled) {
+    padding: .625em 3.1em !important;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+    border-radius: .5em !important;
+}
+
+a {
+    color: inherit;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+    text-decoration: none !important;
+}
+
+.pagination {
+    margin-bottom: 0 !important;
+}
+
+.page-link {
+    font-size: 0.75em !important;
+}
+
+.text-xs {
+    font-size: 0.85em !important;
+}
+
+.form-header {
+    padding: 0.5rem 1rem;
+    background-color: #adb5bd;
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+.table {
+    font-size: 0.9em !important;
+}
+
+.table-kategori {
+    font-size: 1em !important;
+}
+
+.btn-xs, .btn-group-xs > .btn {
+    --bs-btn-padding-y: 0.1rem;
+    --bs-btn-padding-x: 0.5rem;
+    font-size: 0.9em;
+}
+
+img.avatar-pamong {
+    width: 60px;
+}
+
+.align-middle {
+    vertical-align: middle;
+}
+
+.text-semibold {
+    font-weight: 600;
+}
+
+.text-semibold {
+    font-weight: 700;
+}
+
+.text-bolder {
+    font-weight: 900;
+}
+
+.btn-full {
+    display: block;
+    width: 100%;
+}
+
+/* .sidebar-menu .nav-item > .nav-link {
+    margin-bottom: 0;
+} */
+
+.sidebar-wrapper .sidebar-menu > .nav-item > .nav-treeview {
+    background-color: #494e53;
+}
+
+@media (max-width: 460px) {
+    .btn-block {
+        width: 100%;
+    }
+}
