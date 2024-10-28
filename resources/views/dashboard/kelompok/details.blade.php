@@ -6,6 +6,7 @@
             <div class="card rounded-4 shadow">
                 <div class="card-header">
                     <div class="float-end">
+                        <a href="{{ route('kelompok.index') }}" class="btn btn-danger btn-block btn-sm">Daftar Kelompok</a>
                         <a href="" class="btn btn-dark btn-block btn-sm">Unduh Data</a>
                         <a href="" class="btn btn-success btn-block btn-sm">Cetak Data</a>
                         <button type="button" class="btn btn-primary btn-block btn-sm mb-0" data-bs-toggle="modal"
@@ -72,6 +73,7 @@
                                     <th class="text-center">Jabatan/Posisi</th>
                                     <th class="text-center">Nomor Anggota</th>
                                     <th class="text-center">Nama Anggota</th>
+                                    <th class="text-center">Jenis Kelamin</th>
                                     <th class="text-center">{{ $setting->sebutan_dusun }}</th>
                                     <th class="text-center">RW</th>
                                     <th class="text-center">RT</th>
@@ -92,6 +94,9 @@
                                         </td>
                                         <td class="align-middle text-center">
                                             {{ $item->penduduk->nama }}
+                                        </td>
+                                        <td class="align-middle text-center">
+                                            {{ $item->penduduk->jenis_kelamin->nama }}
                                         </td>
                                         <td class="align-middle text-center">
                                             {{ $item->penduduk->keluarga->dusun->nama ?? '-' }}
