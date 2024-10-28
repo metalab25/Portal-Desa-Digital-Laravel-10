@@ -26,6 +26,8 @@
                                     <th class="text-center">RW</th>
                                     <th class="text-center">RT</th>
                                     <th class="text-center">KK</th>
+                                    <th class="text-center">L</th>
+                                    <th class="text-center">P</th>
                                     <th class="text-center" width="10%">Aksi</th>
                                 </tr>
                             </thead>
@@ -39,16 +41,19 @@
                                             @if ($item->penduduk_id == null)
                                                 -
                                             @else()
-                                                Baharudin
+                                                <b>NIK : </b>{{ $item->penduduk->nik . ' - ' . $item->penduduk->nama }}
                                             @endif
                                         </td>
                                         <td class="text-center">{{ $item->rw_count }}</td>
                                         <td class="text-center">{{ $item->rt_count }}</td>
                                         <td class="text-center">{{ $item->keluarga_count }}</td>
+                                        <td class="text-center">{{ $item->jumlah_kepala_keluarga_laki_laki }}</td>
+                                        <td class="text-center">{{ $item->jumlah_kepala_keluarga_perempuan }}</td>
                                         <td class="text-center">
-                                            <a href="{{ url('/desa/wilayah/' . $item->id) }}" class="btn btn-info btn-xs"
+                                            <a href="{{ route('wilayah.show', $item->id) }}" class="btn btn-info btn-xs"
                                                 title="List">L</a>
-                                            <a href="" class="btn btn-warning btn-xs" title="Edit">E</a>
+                                            <a href="{{ route('wilayah.edit', $item->id) }}" class="btn btn-warning btn-xs"
+                                                title="Edit">E</a>
                                             <a href="" class="btn btn-danger btn-xs" title="Delete">D</a>
                                         </td>
                                     </tr>

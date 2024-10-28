@@ -73,6 +73,11 @@
                                             <td>{{ $penduduk->agama->nama }}</td>
                                         </tr>
                                         <tr>
+                                            <td class="text-semibold" width="25%">Status KTP</td>
+                                            <td class="text-semibold text-center" width="2%">:</td>
+                                            <td>{{ $penduduk->status_ktp }}</td>
+                                        </tr>
+                                        <tr>
                                             <td class="text-semibold" width="25%">Status Kependudukan</td>
                                             <td class="text-semibold text-center" width="2%">:</td>
                                             <td>{{ $penduduk->status_penduduk->nama }}</td>
