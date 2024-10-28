@@ -8,8 +8,12 @@
                     <div class="row">
                         <div class="col-md-6"></div>
                         <div class="col-md-6">
-                            <a href="{{ route('pemerintah.create') }}" class="btn btn-primary btn-sm float-end">Tambah
-                                Pemerintah {{ $setting->sebutan_desa }}</a>
+                            <div class="float-end">
+                                <a href="{{ route('pemerintah.cetak') }}" target="_blank" class="btn btn-success btn-sm">Cetak
+                                    Data</a>
+                                <a href="{{ route('pemerintah.create') }}" class="btn btn-primary btn-sm">Tambah
+                                    Pemerintah {{ $setting->sebutan_desa }}</a>
+                            </div>
                         </div>
                     </div>
                 </div>

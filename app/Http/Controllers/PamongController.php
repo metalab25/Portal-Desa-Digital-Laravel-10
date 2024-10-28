@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Agama;
 use App\Models\Pamong;
 use App\Models\Jabatan;
@@ -113,6 +114,17 @@ class PamongController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    public function cetak()
+    {
+        $tanggalHariIni = Carbon::now();
+        $pamongs = Pamong::all();
+
+        return view('dashboard.pamong.cetak', [
+            'pamongs'   => $pamongs,
+            'tanggal'   => tanggal_indonesia($tanggalHariIni, false)
+        ]);
+    }
+
     public function destroy($id)
     {
         $pamong = Pamong::findOrFail($id);

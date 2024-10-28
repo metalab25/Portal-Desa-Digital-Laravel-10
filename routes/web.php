@@ -54,6 +54,7 @@ Route::get('/desa/wilayah/rw/{id}', [RwController::class, 'show'])->name('rw.sho
 Route::resource('/desa/wilayah', DusunController::class)->middleware('auth');
 
 // Pamong
+Route::get('/desa/pemerintah/cetak', [PamongController::class, 'cetak'])->name('pemerintah.cetak');
 Route::resource('/desa/pemerintah', PamongController::class)->middleware('auth');
 
 // Keluarga
