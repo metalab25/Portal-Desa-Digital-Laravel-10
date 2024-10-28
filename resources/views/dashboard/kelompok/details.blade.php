@@ -8,7 +8,8 @@
                     <div class="float-end">
                         <a href="{{ route('kelompok.index') }}" class="btn btn-danger btn-block btn-sm">Daftar Kelompok</a>
                         <a href="" class="btn btn-dark btn-block btn-sm">Unduh Data</a>
-                        <a href="" class="btn btn-success btn-block btn-sm">Cetak Data</a>
+                        <a href="{{ route('kelompok.cetak', $kelompok->id) }}" target="_blank"
+                            class="btn btn-success btn-block btn-sm">Cetak Data</a>
                         <button type="button" class="btn btn-primary btn-block btn-sm mb-0" data-bs-toggle="modal"
                             data-bs-target="#modalTambahAnggota">
                             Tambah Anggota
@@ -108,10 +109,7 @@
                                             {{ $item->penduduk->keluarga->rt->nama ?? '-' }}
                                         </td>
                                         <td class="align-middle text-center">
-                                            <a href="{{ route('anggota.show', $item->id) }}" class="btn btn-success btn-xs"
-                                                title="Show">L</a>
-                                            <a href="{{ route('pemerintah.edit', $item->id) }}"
-                                                class="btn btn-warning btn-xs" title="Edit">E</a>
+                                            <a href="" class="btn btn-warning btn-xs" title="Edit">E</a>
                                             <a href="" class="btn btn-danger btn-xs" title="Delete">D</a>
                                         </td>
                                     </tr>
