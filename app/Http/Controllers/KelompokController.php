@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Kelompok;
-use App\Models\KelompokAnggota;
-use App\Models\KelompokJabatan;
 use App\Models\Penduduk;
 use Illuminate\Http\Request;
+use App\Models\KelompokAnggota;
+use App\Models\KelompokJabatan;
 use App\Models\KelompokKategori;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -95,6 +96,21 @@ class KelompokController extends Controller
     public function update(Request $request, Kelompok $kelompok)
     {
         //
+    }
+
+    public function cetak($id)
+    {
+        $tanggalHariIni = Carbon::now();
+        $kelompok = Kelompok::findOrFail($id);
+        $anggotas = KelompokAnggota::orderBy('kelompok_jabatan_id', 'asc')->where('kelompok_id', $id)->with(['penduduk.keluarga.dusun.rw.rt'])->get();
+
+        // dd($anggotas);
+
+        return view('dashboard.kelompok.cetak', [
+            'anggotas'  => $anggotas,
+            'kelompok'  => $kelompok,
+            'tanggal'   => tanggal_indonesia($tanggalHariIni, false)
+        ]);
     }
 
     /**

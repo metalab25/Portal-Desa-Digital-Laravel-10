@@ -69,6 +69,7 @@ Route::resource('/kependudukan/penduduk', PendudukController::class)->middleware
 Route::resource('/kependudukan/kelompok-kategori', KelompokKategoriController::class)->middleware('auth');
 
 // Kelompok
+Route::get('/kependudukan/kelompok/cetak/{id}', [KelompokController::class, 'cetak'])->name('kelompok.cetak');
 Route::resource('/kependudukan/kelompok', KelompokController::class)->middleware('auth');
 
 // Anggota Kelompok
