@@ -19,7 +19,7 @@
                                             <td>
                                                 <a href="{{ route('kelompok-kategori.show', $item->id) }}">
                                                     {{ $item->nama }} <span
-                                                        class="float-end">{{ $item->kelompok_count }}</span>
+                                                        class="badge badge-kat-kelompok text-bg-danger float-end">{{ $item->kelompok_count }}</span>
                                                 </a>
                                             </td>
                                         </tr>

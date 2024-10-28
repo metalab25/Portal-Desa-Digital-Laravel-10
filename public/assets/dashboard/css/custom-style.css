@@ -86,16 +86,16 @@ img.avatar-pamong {
     width: 100%;
 }
 
-/* .sidebar-menu .nav-item > .nav-link {
-    margin-bottom: 0;
-} */
-
 .sidebar-wrapper .sidebar-menu > .nav-item > .nav-treeview {
     background-color: #494e53;
 }
 
 .form-label {
     padding-top: 0.5rem;
+}
+
+.badge-kat-kelompok {
+    margin-top: 3px;
 }
 
 @media (max-width: 460px) {
