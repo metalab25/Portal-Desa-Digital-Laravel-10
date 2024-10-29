@@ -98,6 +98,23 @@ img.avatar-pamong {
     margin-top: 3px;
 }
 
+.ck-rounded-corners .ck.ck-editor__main>.ck-editor__editable,
+.ck.ck-editor__main>.ck-editor__editable.ck-rounded-corners {
+    border-radius: 0.75rem !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.ck-source-editing-area {
+    height: 250px;
+    font-size: 1rem;
+}
+
+.ck-editor__editable[role="textbox"] {
+    height: 250px;
+    font-size: 1rem;
+}
+
 @media (max-width: 460px) {
     .btn-block {
         width: 100%;
