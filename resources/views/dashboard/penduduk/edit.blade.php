@@ -67,7 +67,7 @@
                                         <img src="{{ asset('storage/' . $penduduk->foto) }}"
                                             class="foto-preview rounded-4 img-fluid d-block mx-auto mb-3">
                                     @else
-                                        <img src="{{ asset('assets/img/no-picture.webp') }}"
+                                        <img src="{{ asset('assets//dashboard/img/avatar5.png') }}"
                                             class="foto-preview rounded-4 img-fluid d-block mx-auto mb-3">
                                     @endif
                                 </div>
