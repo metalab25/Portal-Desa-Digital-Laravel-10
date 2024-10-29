@@ -8,6 +8,7 @@ use App\Http\Controllers\RwController;
 use App\Http\Controllers\DusunController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PamongController;
+use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\InfoDesaController;
 use App\Http\Controllers\KelompokController;
 use App\Http\Controllers\KeluargaController;
@@ -74,3 +75,6 @@ Route::resource('/kependudukan/kelompok', KelompokController::class)->middleware
 
 // Anggota Kelompok
 Route::resource('/kependudukan/kelompok/anggota', KelompokAnggotaController::class)->middleware('auth');
+
+// Jabatan
+Route::resource('/administrasi/jabatan', JabatanController::class)->middleware('auth');

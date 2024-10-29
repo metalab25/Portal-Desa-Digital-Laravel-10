@@ -11,4 +11,9 @@ class Jabatan extends Model
 
     protected $guarded = ['id'];
     protected $table = 'jabatans';
+
+    public function pamong()
+    {
+        return $this->hasMany(Pamong::class, 'jabatan_id');
+    }
 }
