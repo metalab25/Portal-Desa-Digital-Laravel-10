@@ -75,8 +75,13 @@
                                         <tr>
                                             <td class="text-semibold" width="25%">Status KTP</td>
                                             <td class="text-semibold text-center" width="2%">:</td>
-                                            <td>{{ $penduduk->wajib_ktp . ' - ' . $penduduk->status_ktp->nama . ' - ' . $penduduk->status_rekam_ktp->nama }}
-                                            </td>
+                                            <td>
+                                                @if ($penduduk->status_ktp == null)
+                                                    {{ $penduduk->wajib_ktp }}
+                                                @else
+                                                    {{ $penduduk->wajib_ktp . ' - ' . $penduduk->status_ktp->nama . ' - ' . $penduduk->status_rekam_ktp->nama }}
+                                                @endif
+                                            <td>
                                         </tr>
                                         <tr>
                                             <td class="text-semibold" width="25%">Status Kependudukan</td>
