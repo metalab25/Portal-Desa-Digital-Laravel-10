@@ -26,6 +26,7 @@
                                     <th class="text-center">RW</th>
                                     <th class="text-center">RT</th>
                                     <th class="text-center">Tanggal Lahir</th>
+                                    <th class="text-center">Usia</th>
                                     <th class="text-center">Pendidikan KK</th>
                                     <th class="text-center">Pekerjaan</th>
                                     <th class="text-center">Aksi</th>
@@ -44,6 +45,7 @@
                                         <td class="text-center">{{ $item->keluarga->rw->nama }}</td>
                                         <td class="text-center">{{ $item->keluarga->rt->nama }}</td>
                                         <td class="text-center">{{ tanggal_indonesia($item->tanggal_lahir, false) }}</td>
+                                        <td class="text-center">{{ $item->umur }}</td>
                                         <td>{{ $item->pendidikan_kk->nama }}</td>
                                         <td>{{ $item->pekerjaan->nama }}</td>
                                         <td class="text-center">
@@ -71,3 +73,12 @@
 
     {{-- @include('dashboard.keluarga.create-kk') --}}
 @endsection
+
+@push('script')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $('body').addClass('sidebar-collapse');
+        });
+    </script>
+@endpush
