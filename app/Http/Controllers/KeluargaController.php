@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Rt;
 use App\Models\Rw;
+use Carbon\Carbon;
 use App\Models\Dusun;
 use App\Models\Keluarga;
 use App\Models\Penduduk;
@@ -116,6 +117,20 @@ class KeluargaController extends Controller
 
         Alert::success('Success', 'Data keluarga baru berhasil diperbaharui');
         return redirect()->route('keluarga.index');
+    }
+
+    public function cetak($id)
+    {
+        $tanggalHariIni = Carbon::now();
+        $keluarga       = Keluarga::findOrFail($id);
+        $anggota        = Penduduk::where('keluarga_id', $id)->get();
+
+        return view('dashboard.keluarga.cetak', [
+            'page'      => 'Details Keluarga',
+            'keluarga'  => $keluarga,
+            'anggota'   => $anggota,
+            'tanggal'   => tanggal_indonesia($tanggalHariIni, false)
+        ]);
     }
 
     /**

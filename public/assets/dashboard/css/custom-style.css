@@ -40,6 +40,10 @@ a:hover {
     font-size: 0.85em !important;
 }
 
+.text-xxs {
+    font-size: 0.5em !important;
+}
+
 .form-header {
     padding: 0.5rem 1rem;
     background-color: #adb5bd;
