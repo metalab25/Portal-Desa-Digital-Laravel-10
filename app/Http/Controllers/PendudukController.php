@@ -185,9 +185,9 @@ class PendudukController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Penduduk $penduduk)
+    public function edit($id)
     {
-        $penduduk = Penduduk::first();
+        $penduduk = Penduduk::findOrFail($id);
 
         // Hitung tanggal 17 tahun setelah tanggal lahir
         $tanggalWajibKTP = Carbon::parse($penduduk->tanggal_lahir)->addYears(17);

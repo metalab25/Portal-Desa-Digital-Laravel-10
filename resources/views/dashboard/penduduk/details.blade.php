@@ -29,7 +29,7 @@
                                     <img src="{{ asset('storage/' . $penduduk->foto) }}"
                                         class="rounded-4 img-fluid d-block mx-auto">
                                 @else
-                                    <img src="{{ asset('/assets/dashboard/img/no-picture.webp') }}"
+                                    <img src="{{ asset('/assets/dashboard/img/avatar5.png') }}"
                                         class="rounded-4 img-fluid d-block mx-auto">
                                 @endif
                             </div>
