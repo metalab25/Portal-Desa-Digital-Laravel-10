@@ -62,9 +62,16 @@ class KeluargaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Keluarga $keluarga)
+    public function show($id)
     {
-        //
+        $keluarga   = Keluarga::findOrFail($id);
+        $anggota    = Penduduk::where('keluarga_id', $id)->get();
+
+        return view('dashboard.keluarga.details', [
+            'page'      => 'Details Keluarga',
+            'keluarga'  => $keluarga,
+            'anggota'   => $anggota
+        ]);
     }
 
     /**
@@ -74,7 +81,7 @@ class KeluargaController extends Controller
     {
         $dusuns     = Dusun::orderBy('nama')->get();
         $penduduk   = Penduduk::orderBy('nama')->where('hubungan_keluarga_id', '1')->get();
-        $keluarga = Keluarga::findOrFail($id);
+        $keluarga   = Keluarga::findOrFail($id);
 
         return view('dashboard.keluarga.edit', [
             'page'              =>  'Keluarga',

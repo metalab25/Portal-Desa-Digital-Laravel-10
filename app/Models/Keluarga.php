@@ -38,6 +38,6 @@ class Keluarga extends Model
 
     public function anggota()
     {
-        return $this->hasMany(Penduduk::class);
+        return $this->hasMany(Penduduk::class, 'keluarga_id', 'id');
     }
 }
