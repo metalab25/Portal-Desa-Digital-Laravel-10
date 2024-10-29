@@ -108,7 +108,38 @@ class PamongController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validatedData = $request->validate([
+            'jabatan'   =>  'required',
+            'foto'      =>  'image|mimes:jpg,jpeg,png,bmp,webp|max:2048',
+        ]);
+
+        $validatedData = Pamong::findOrFail($id);
+
+        $validatedData['penduduk_id']       = $request->penduduk_id;
+        $validatedData['nama']              = $request->nama;
+        $validatedData['nik']               = $request->nik;
+        $validatedData['nip']               = $request->nip;
+        $validatedData['agama_id']          = $request->agama_id;
+        $validatedData['jenis_kelamin_id']  = $request->jenis_kelamin_id;
+        $validatedData['pendidikan_kk_id']  = $request->pendidikan_kk_id;
+        $validatedData['tempat_lahir']      = $request->tempat_lahir;
+        $validatedData['tanggal_lahir']     = $request->tanggal_lahir;
+        $validatedData['no_sk']             = $request->no_sk;
+        $validatedData['tgl_sk']            = $request->tgl_sk;
+        $validatedData['masa_jabatan']      = $request->masa_jabatan;
+        $validatedData['user_id']           = Auth::user()->id;
+
+        if ($request->file('foto')) {
+            if ($request->oldFoto) {
+                Storage::delete($request->oldFoto);
+            }
+            $validatedData['foto'] = $request->file('foto')->store('penduduks');
+        }
+
+        $validatedData->save();
+
+        Alert::success('Success', 'Data pemerintah berhasil diperbaharui');
+        return redirect()->route('pemerintah.index');
     }
 
     /**
