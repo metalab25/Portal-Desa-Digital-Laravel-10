@@ -6,7 +6,9 @@
             <div class="card rounded-3">
                 <div class="card-header">
                     <div class="float-end">
-                        <a class="btn btn-success btn-sm">Cetak Kartu Keluarga</a>
+                        <a href="{{ route('keluarga.cetak', $keluarga->id) }}" target="_blank"
+                            class="btn btn-success btn-sm">Cetak Kartu
+                            Keluarga</a>
                         <a href="{{ route('keluarga.index') }}" class="btn btn-primary btn-sm">Daftar Keluarga</a>
                     </div>
                 </div>
