@@ -75,7 +75,8 @@
                                         <tr>
                                             <td class="text-semibold" width="25%">Status KTP</td>
                                             <td class="text-semibold text-center" width="2%">:</td>
-                                            <td>{{ $penduduk->status_ktp }}</td>
+                                            <td>{{ $penduduk->wajib_ktp . ' - ' . $penduduk->status_ktp->nama . ' - ' . $penduduk->status_rekam_ktp->nama }}
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="text-semibold" width="25%">Status Kependudukan</td>
