@@ -74,7 +74,8 @@
 
                                         </td>
                                         <td class="text-center">
-                                            <a href="#" class="btn btn-info btn-xs" title="Show">S</a>
+                                            <a href="{{ route('keluarga.show', $item->id) }}" class="btn btn-info btn-xs"
+                                                title="Show">S</a>
                                             <a href="{{ route('keluarga.edit', $item->id) }}"
                                                 class="btn btn-warning btn-xs">E</a>
                                             <a href="" class="btn btn-success btn-xs" title="Pindah">P</a>
