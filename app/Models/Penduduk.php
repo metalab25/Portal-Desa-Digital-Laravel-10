@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use App\Models\Agama;
 use App\Models\Cacat;
 use App\Models\Dusun;
@@ -133,6 +134,11 @@ class Penduduk extends Model
     public function status_rekam_ktp()
     {
         return $this->belongsTo(StatusRekamKtp::class);
+    }
+
+    public function getUmurAttribute()
+    {
+        return Carbon::parse($this->tanggal_lahir)->age;
     }
 
     // public function tanggalLahir(): Attribute
