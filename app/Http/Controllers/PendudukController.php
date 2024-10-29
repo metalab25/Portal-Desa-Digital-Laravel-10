@@ -25,6 +25,8 @@ use App\Models\StatusPenduduk;
 use App\Models\TempatKelahiran;
 use App\Models\HubunganKeluarga;
 use App\Models\PenolongKelahiran;
+use App\Models\StatusKtp;
+use App\Models\StatusRekamKtp;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -67,6 +69,8 @@ class PendudukController extends Controller
         $sakit_menahun      = SakitMenahun::all();
         $hamil              = Kehamilan::all();
         $cara_kb            = CaraKb::all();
+        $ektp               = StatusKtp::all();
+        $rekam_ektp         = StatusRekamKtp::all();
 
         return view('dashboard.penduduk.add', [
             'page'                  =>  'Tambah Data Penduduk',
@@ -87,7 +91,9 @@ class PendudukController extends Controller
             'cacat'                 =>  $cacat,
             'sakit_menahun'         =>  $sakit_menahun,
             'cara_kb'               =>  $cara_kb,
-            'kehamilan'             =>  $hamil
+            'kehamilan'             =>  $hamil,
+            'ektp'                  =>  $ektp,
+            'rekam_ektp'            =>  $rekam_ektp
         ]);
     }
 
@@ -147,6 +153,8 @@ class PendudukController extends Controller
         $validatedData['sakit_menahun_id']      = $request->sakit_menahun_id;
         $validatedData['cara_kb_id']            = $request->cara_kb_id;
         $validatedData['kehamilan_id']          = $request->kehamilan_id;
+        $validatedData['status_ktp_id']         = $request->status_ktp_id;
+        $validatedData['status_rekam_ktp_id']   = $request->status_rekam_ktp_id;
         $validatedData['user_id']               = Auth::user()->id;
 
         Penduduk::create($validatedData);
@@ -166,7 +174,7 @@ class PendudukController extends Controller
         $tanggalWajibKTP = Carbon::parse($penduduk->tanggal_lahir)->addYears(17);
 
         // Tentukan status wajib KTP berdasarkan apakah tanggal hari ini sudah lewat dari atau sama dengan tanggal wajib KTP
-        $penduduk->status_ktp = $tanggalWajibKTP->isPast() ? 'Wajib KTP' : 'Belum Wajib KTP';
+        $penduduk->wajib_ktp = $tanggalWajibKTP->isPast() ? 'Wajib' : 'Belum Wajib';
 
         return view('dashboard.penduduk.details', [
             'page'      => 'Biodata ' . $penduduk->nama,
@@ -180,6 +188,13 @@ class PendudukController extends Controller
     public function edit(Penduduk $penduduk)
     {
         $penduduk = Penduduk::first();
+
+        // Hitung tanggal 17 tahun setelah tanggal lahir
+        $tanggalWajibKTP = Carbon::parse($penduduk->tanggal_lahir)->addYears(17);
+
+        // Tentukan status wajib KTP berdasarkan apakah tanggal hari ini sudah lewat dari atau sama dengan tanggal wajib KTP
+        $penduduk->wajib_ktp = $tanggalWajibKTP->isPast() ? 'Wajib' : 'Belum Wajib';
+
 
         $keluarga           = Keluarga::orderBy('no_kk')->get();
         $penolong_kelahiran = PenolongKelahiran::all();
@@ -199,6 +214,8 @@ class PendudukController extends Controller
         $sakit_menahun      = SakitMenahun::all();
         $hamil              = Kehamilan::all();
         $cara_kb            = CaraKb::all();
+        $ektp               = StatusKtp::all();
+        $rekam_ektp         = StatusRekamKtp::all();
 
         return view('dashboard.penduduk.edit', [
             'page'                  => 'Ubah Biodata ' . $penduduk->nama,
@@ -220,7 +237,9 @@ class PendudukController extends Controller
             'sakit_menahun'         =>  $sakit_menahun,
             'cara_kb'               =>  $cara_kb,
             'kehamilan'             =>  $hamil,
-            'penduduk'              => $penduduk
+            'penduduk'              =>  $penduduk,
+            'ektp'                  =>  $ektp,
+            'rekam_ektp'            =>  $rekam_ektp
         ]);
     }
 
@@ -249,10 +268,10 @@ class PendudukController extends Controller
             $rules['nik'] = 'required|unique:penduduk';
         }
         if ($request->telepon != $penduduk->telepon) {
-            $rules['telepon'] = 'required|unique:penduduk';
+            $rules['telepon'] = 'nullable|unique:penduduk';
         }
         if ($request->email != $penduduk->email) {
-            $rules['email'] = 'email|unique:penduduk';
+            $rules['email'] = 'nullable|email|unique:penduduk';
         }
 
         $validatedData = $request->validate($rules);
@@ -281,12 +300,12 @@ class PendudukController extends Controller
         $validatedData['tanggal_kawin']         = $request->tanggal_kawin;
         $validatedData['no_akta_cerai']         = $request->no_akta_cerai;
         $validatedData['tanggal_cerai']         = $request->tanggal_cerai;
-        // $validatedData['telepon']               = $request->telepon;
-        // $validatedData['email']                 = $request->email;
         $validatedData['cacat_id']              = $request->cacat_id;
         $validatedData['sakit_menahun_id']      = $request->sakit_menahun_id;
         $validatedData['cara_kb_id']            = $request->cara_kb_id;
         $validatedData['kehamilan_id']          = $request->kehamilan_id;
+        $validatedData['status_ktp_id']         = $request->status_ktp_id;
+        $validatedData['status_rekam_ktp_id']   = $request->status_rekam_ktp_id;
         $validatedData['user_id']               = Auth::user()->id;
 
         if ($request->file('foto')) {

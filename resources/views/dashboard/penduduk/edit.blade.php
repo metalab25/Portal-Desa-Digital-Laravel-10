@@ -214,7 +214,50 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="form-header mb-3">Data Kelahiran</div>
+                                <div class="form-header mb-2">Data KTP</div>
+                                <div class="form-group row mb-3">
+                                    <div class="col-md-4">
+                                        <label class="form-label">Wajib KTP</label>
+                                        <input type="text" class="form-control" value="{{ $penduduk->wajib_ktp }}"
+                                            disabled>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="status_ktp_id" class="form-label">Status E-KTP</label>
+                                        <select id="status_ktp_id" name="status_ktp_id" class="form-control form-select">
+                                            <option value="">-- Pilih Status E-KTP -- </option>
+                                            @foreach ($ektp as $item)
+                                                @if (old('status_ktp_id', $penduduk->status_ktp_id) == $item->id)
+                                                    <option value="{{ $item->id }}" selected>
+                                                        {{ $item->nama }}
+                                                    </option>
+                                                @else
+                                                    <option value="{{ $item->id }}">
+                                                        {{ $item->nama }}
+                                                    </option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="status_rekam_ktp_id" class="form-label">Status Rekam E-KTP</label>
+                                        <select id="status_rekam_ktp_id" name="status_rekam_ktp_id"
+                                            class="form-control form-select">
+                                            <option value="">-- Pilih Status Rekam E-KTP -- </option>
+                                            @foreach ($rekam_ektp as $item)
+                                                @if (old('status_rekam_ktp_id', $penduduk->status_rekam_ktp_id) == $item->id)
+                                                    <option value="{{ $item->id }}" selected>
+                                                        {{ $item->nama }}
+                                                    </option>
+                                                @else
+                                                    <option value="{{ $item->id }}">
+                                                        {{ $item->nama }}
+                                                    </option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-header mb-2">Data Kelahiran</div>
                                 <div class="form-group row mb-3">
                                     <div class="col-md-4">
                                         <label for="no_akta_lahir" class="form-label">No Akta Kelahiran</label>
@@ -334,7 +377,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-header mb-3">Data Pendidikan dan Pekerjaan</div>
+                                <div class="form-header mb-2">Data Pendidikan dan Pekerjaan</div>
                                 <div class="form-group row mb-3">
                                     <div class="col-md-4">
                                         <label for="pendidikan_id" class="form-label">Pendidikan Ditempuh</label>
@@ -400,7 +443,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="form-header mb-3">Data Kewarganegaraan</div>
+                                <div class="form-header mb-2">Data Kewarganegaraan</div>
                                 <div class="form-group row mb-3">
                                     <div class="col-md-4">
                                         <label for="warga_negara_id" class="form-label">Kewarganegaraan</label>
@@ -454,7 +497,7 @@
                                             value="{{ old('tanggal_akhir_kitas', $penduduk->tanggal_akhir_kitas) }}">
                                     </div>
                                 </div>
-                                <div class="form-header mb-3">Data Orang Tua</div>
+                                <div class="form-header mb-2">Data Orang Tua</div>
                                 <div class="form-group row mb-3">
                                     <div class="col-md-4">
                                         <label for="nama_ayah" class="form-label">Nama Ayah</label>
@@ -483,7 +526,7 @@
                                             placeholder="NIK Lengkap Ibu">
                                     </div>
                                 </div>
-                                <div class="form-header mb-3">Data Tambahan</div>
+                                <div class="form-header mb-2">Data Tambahan</div>
                                 <div class="form-group row mb-3">
                                     <div class="col-md-6">
                                         <label for="telepon" class="form-label">Telepon</label>
@@ -513,7 +556,7 @@
                                             placeholder="Alamat sebelumnya">
                                     </div>
                                 </div>
-                                <div class="form-header mb-3">Data Status Perkawinan</div>
+                                <div class="form-header mb-2">Data Status Perkawinan</div>
                                 <div class="form-group row mb-3">
                                     <div class="col-md-4">
                                         <label for="status_kawin_id" class="form-label">Status Perkawinan</label>
@@ -567,7 +610,7 @@
                                             value="{{ old('tanggal_cerai', $penduduk->tanggal_cerai) }}">
                                     </div>
                                 </div>
-                                <div class="form-header mb-3">Data Kesehatan</div>
+                                <div class="form-header mb-2">Data Kesehatan</div>
                                 <div class="form-group row mb-3">
                                     <div class="col-md-4">
                                         <label for="golongan_darah_id" class="form-label">Golongan Darah</label>
