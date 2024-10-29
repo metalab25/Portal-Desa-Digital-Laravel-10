@@ -67,7 +67,7 @@
                                                 {{ 'NIP/NIAP : ' . $item->nip }}
                                             @endif
                                         </td>
-                                        <td class="align-middle text-center">{{ $item->jabatan }}</td>
+                                        <td class="align-middle text-center">{{ $item->jabatan->nama }}</td>
                                         <td class="align-middle text-center">{{ $item->no_sk }}</td>
                                         <td class="align-middle text-center">{{ tanggal_indonesia($item->tgl_sk, false) }}
                                         </td>
