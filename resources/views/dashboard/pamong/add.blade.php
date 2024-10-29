@@ -19,7 +19,7 @@
                                         class="foto-preview rounded-4 img-fluid d-block mx-auto mb-2">
                                 </div>
                                 <div class="mb-0">
-                                    <p class="text-center text-xs text-danger mb-2">Maksimal 2MB dengan ukuran 400px x 600px
+                                    <p class="text-center text-xs text-danger mb-2">Maksimal 2MB dengan ukuran 800px x 450px
                                     </p>
                                     <input class="form-control @error('foto') is-invalid @enderror" type="file"
                                         name="foto" id="foto" onchange="previewFoto()">
@@ -69,14 +69,25 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group row mb-3">
-                                    <label for="jabatan" class="form-label col-md-2 pt-2">Jabatan</label>
+                                    <label for="jabatan_id" class="form-label col-md-2 pt-2">Jabatan</label>
                                     <div class="col-md-10">
-                                        <input type="text" name="jabatan" id="jabatan"
-                                            class="form-control  @error('jabatan') is-invalid @enderror"
-                                            value="{{ old('jabatan') }}" placeholder="Tuliskan Jabatan">
+                                        <select id="jabatan_id" name="jabatan_id" class="form-control form-select">
+                                            <option value="">-- Pilih Jabatan -- </option>
+                                            @foreach ($jabatans as $item)
+                                                @if (old('jabatan_id') == $item->id)
+                                                    <option value="{{ $item->id }}" selected>
+                                                        {{ $item->nama }}
+                                                    </option>
+                                                @else
+                                                    <option value="{{ $item->id }}">
+                                                        {{ $item->nama }}
+                                                    </option>
+                                                @endif
+                                            @endforeach
+                                        </select>
                                         @error('jabatan')
                                             <div class="invalid-feedback">
-                                                {{ 'Jabatan harus diisi' }}
+                                                {{ 'Jabatan harus dipilih' }}
                                             </div>
                                         @enderror
                                     </div>
@@ -96,7 +107,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row mb-3">
-                                    <label for="tgl_sk" class="form-label col-md-2 pt-2">Tanggall SK</label>
+                                    <label for="tgl_sk" class="form-label col-md-2 pt-2">Tangagl SK</label>
                                     <div class="col-md-10">
                                         <input type="date" name="tgl_sk" id="tgl_sk" class="form-control"
                                             value="{{ old('tgl_sk') }}">

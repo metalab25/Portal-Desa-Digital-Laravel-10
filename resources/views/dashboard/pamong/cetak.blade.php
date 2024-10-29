@@ -77,7 +77,7 @@
                             {{ $pamong->penduduk->nama }}
                         @endif
                     </td>
-                    <td style="border: 1px solid #444 !important">{{ $pamong->jabatan }}</td>
+                    <td style="border: 1px solid #444 !important">{{ $pamong->jabatan->nama }}</td>
                     <td style="border: 1px solid #444 !important">{{ $pamong->no_sk }}</td>
                     <td style="border: 1px solid #444 !important">{{ tanggal_indonesia($pamong->tgl_sk, false) }}</td>
                     <td style="border: 1px solid #444 !important">{{ $pamong->masa_jabatan }}</td>

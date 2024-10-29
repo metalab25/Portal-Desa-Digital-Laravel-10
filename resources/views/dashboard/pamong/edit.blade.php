@@ -76,14 +76,25 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group row mb-3">
-                                    <label for="jabatan" class="form-label col-md-2 pt-2">Jabatan</label>
+                                    <label for="jabatan_id" class="form-label col-md-2 pt-2">Jabatan</label>
                                     <div class="col-md-10">
-                                        <input type="text" name="jabatan" id="jabatan"
-                                            class="form-control  @error('jabatan') is-invalid @enderror"
-                                            value="{{ old('jabatan', $pamong->jabatan) }}" placeholder="Tuliskan Jabatan">
+                                        <select id="jabatan_id" name="jabatan_id" class="form-control form-select">
+                                            <option value="">-- Pilih Jabatan -- </option>
+                                            @foreach ($jabatans as $item)
+                                                @if (old('jabatan_id', $pamong->jabatan_id) == $item->id)
+                                                    <option value="{{ $item->id }}" selected>
+                                                        {{ $item->nama }}
+                                                    </option>
+                                                @else
+                                                    <option value="{{ $item->id }}">
+                                                        {{ $item->nama }}
+                                                    </option>
+                                                @endif
+                                            @endforeach
+                                        </select>
                                         @error('jabatan')
                                             <div class="invalid-feedback">
-                                                {{ 'Jabatan harus diisi' }}
+                                                {{ 'Jabatan harus dipilih' }}
                                             </div>
                                         @enderror
                                     </div>

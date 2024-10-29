@@ -41,13 +41,15 @@ class PamongController extends Controller
         $jenis_kelamin  = JenisKelamin::orderBy('nama')->get();
         $agama          = Agama::orderBy('nama')->get();
         $pendidikan_kk  = PendidikanKk::all();
+        $jabatan        = Jabatan::all();
 
         return view('dashboard.pamong.add', [
             'page'          => 'Tambah Data Pemerintah ' . $setting->sebutan_desa,
             'penduduk'      => $penduduk,
             'sex'           => $jenis_kelamin,
             'agama'         => $agama,
-            'pendidikan_kk' => $pendidikan_kk
+            'pendidikan_kk' => $pendidikan_kk,
+            'jabatans'      => $jabatan
         ]);
     }
 
@@ -59,8 +61,8 @@ class PamongController extends Controller
         $setting        = Pengaturan::first();
 
         $validatedData = $request->validate([
-            'jabatan'   =>  'required',
-            'foto'      =>  'image|mimes:jpg,jpeg,png,bmp,webp|max:2048',
+            'jabatan_id'    =>  'required',
+            'foto'          =>  'image|mimes:jpg,jpeg,png,bmp,webp|max:2048',
         ]);
 
         $validatedData['penduduk_id']       = $request->penduduk_id;
@@ -98,19 +100,35 @@ class PamongController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Pamong $pamong)
     {
-        //
+        $pamong         = Pamong::first();
+        $setting        = Pengaturan::first();
+        $penduduk       = Penduduk::orderBy('nama')->get();
+        $jenis_kelamin  = JenisKelamin::orderBy('nama')->get();
+        $agama          = Agama::orderBy('nama')->get();
+        $pendidikan_kk  = PendidikanKk::all();
+        $jabatan        = Jabatan::all();
+
+        return view('dashboard.pamong.edit', [
+            'page'          => 'Ubah Data Pemerintah ' . $setting->sebutan_desa,
+            'penduduk'      => $penduduk,
+            'sex'           => $jenis_kelamin,
+            'agama'         => $agama,
+            'pendidikan_kk' => $pendidikan_kk,
+            'jabatans'      => $jabatan,
+            'pamong'        => $pamong
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'jabatan'   =>  'required',
-            'foto'      =>  'image|mimes:jpg,jpeg,png,bmp,webp|max:2048',
+            'jabatan_id'    =>  'required',
+            'foto'          =>  'image|mimes:jpg,jpeg,png,bmp,webp|max:2048',
         ]);
 
         $validatedData = Pamong::findOrFail($id);
@@ -145,6 +163,7 @@ class PamongController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+
     public function cetak()
     {
         $tanggalHariIni = Carbon::now();
