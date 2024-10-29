@@ -116,8 +116,15 @@ class DusunController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Dusun $dusun)
+    public function destroy($id)
     {
-        //
+        $setting = Pengaturan::first();
+        $dusun = Dusun::findOrFail($id);
+
+        $dusun->delete();
+
+        Alert::success('Success', 'Data' . $setting->sebutan_dusun . 'berhasil dihapus');
+
+        return redirect()->route('wilayah.index');
     }
 }
