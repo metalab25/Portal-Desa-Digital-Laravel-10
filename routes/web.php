@@ -8,7 +8,6 @@ use App\Http\Controllers\RwController;
 use App\Http\Controllers\DusunController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PamongController;
-use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\InfoDesaController;
 use App\Http\Controllers\KelompokController;
 use App\Http\Controllers\KeluargaController;
@@ -56,16 +55,17 @@ Route::get('/desa/wilayah/rw/{id}', [RwController::class, 'show'])->name('rw.sho
 Route::resource('/desa/wilayah', DusunController::class)->middleware('auth');
 
 // Pamong
-Route::get('/desa/pemerintah/cetak', [PamongController::class, 'cetak'])->name('pemerintah.cetak');
+Route::get('/desa/pemerintah/cetak', [PamongController::class, 'cetak'])->name('pemerintah.cetak')->middleware('auth');
 Route::resource('/desa/pemerintah', PamongController::class)->middleware('auth');
 
 // Keluarga
-Route::get('/kependudukan/keluarga/cetak/{id}', [KeluargaController::class, 'cetak'])->name('keluarga.cetak');
+Route::get('/kependudukan/keluarga/cetak/{id}', [KeluargaController::class, 'cetak'])->name('keluarga.cetak')->middleware('auth');
 Route::resource('/kependudukan/keluarga', KeluargaController::class)->middleware('auth');
-Route::get('/get-rw/{dusun_id}', [KeluargaController::class, 'getRwByDusun']);
-Route::get('/get-rt/{rw_id}', [KeluargaController::class, 'getRtByRw']);
+Route::get('/get-rw/{dusun_id}', [KeluargaController::class, 'getRwByDusun'])->middleware('auth');
+Route::get('/get-rt/{rw_id}', [KeluargaController::class, 'getRtByRw'])->middleware('auth');
 
 // Penduduk
+Route::get('/kependudukan/penduduk/cetak/{id}', [PendudukController::class, 'cetak'])->name('penduduk.cetak')->middleware('auth');
 Route::resource('/kependudukan/penduduk', PendudukController::class)->middleware('auth');
 
 // Kelompok Kategori

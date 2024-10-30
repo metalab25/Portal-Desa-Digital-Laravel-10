@@ -322,6 +322,22 @@ class PendudukController extends Controller
         return redirect()->route('penduduk.index');
     }
 
+    public function cetak($id)
+    {
+        $penduduk = Penduduk::findOrFail($id);
+
+        // Hitung tanggal 17 tahun setelah tanggal lahir
+        $tanggalWajibKTP = Carbon::parse($penduduk->tanggal_lahir)->addYears(17);
+
+        // Tentukan status wajib KTP berdasarkan apakah tanggal hari ini sudah lewat dari atau sama dengan tanggal wajib KTP
+        $penduduk->wajib_ktp = $tanggalWajibKTP->isPast() ? 'Wajib' : 'Belum Wajib';
+
+        return view('dashboard.penduduk.cetak-biodata', [
+            'page'      => 'Biodata ' . $penduduk->nama,
+            'penduduk'  => $penduduk
+        ]);
+    }
+
     /**
      * Remove the specified resource from storage.
      */
