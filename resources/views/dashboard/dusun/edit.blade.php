@@ -48,8 +48,8 @@
                         </div>
                     </div>
                     <div class="card-footer py-3">
-                        <a href="{{ route('wilayah.index') }}" class="btn btn-danger btn-sm">Batal</a>
-                        <button type="submit" class="btn btn-primary btn-sm float-end">Simpan</button>
+                        <a href="{{ route('wilayah.index') }}" class="btn btn-danger btn-block btn-sm mb-sm-1">Batal</a>
+                        <button type="submit" class="btn btn-primary btn-block btn-sm float-end">Simpan</button>
                     </div>
                 </form>
             </div>

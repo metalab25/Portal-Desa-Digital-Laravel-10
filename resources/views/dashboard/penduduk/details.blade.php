@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <a href="{{ route('penduduk.index') }}" class="btn btn-danger btn-sm">Kembali</a>
+                    <a href="{{ route('penduduk.index') }}" class="btn btn-danger btn-block btn-sm mb-sm-1">Kembali</a>
                 </div>
                 <div class="col-md-6">
-                    <div class="float-end">
-                        <a href="#" class="btn btn-success btn-sm">Cetak Biodata</a>
-                        <a href="{{ route('penduduk.edit', $penduduk->id) }}" class="btn btn-warning btn-sm">Ubah
+                    <div class="float-end float-end-sm-none">
+                        <a href="#" class="btn btn-success btn-block btn-sm mb-sm-1">Cetak Biodata</a>
+                        <a href="{{ route('penduduk.edit', $penduduk->id) }}" class="btn btn-warning btn-block btn-sm">Ubah
                             Data</a>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                                     <img src="{{ asset('storage/' . $penduduk->foto) }}"
                                         class="rounded-4 img-fluid d-block mx-auto">
                                 @else
-                                    <img src="{{ asset('/assets/dashboard/img/no-picture.webp') }}"
+                                    <img src="{{ asset('/assets/dashboard/img/avatar5.png') }}"
                                         class="rounded-4 img-fluid d-block mx-auto">
                                 @endif
                             </div>
@@ -75,7 +75,13 @@
                                         <tr>
                                             <td class="text-semibold" width="25%">Status KTP</td>
                                             <td class="text-semibold text-center" width="2%">:</td>
-                                            <td>{{ $penduduk->status_ktp }}</td>
+                                            <td>
+                                                @if ($penduduk->status_ktp == null)
+                                                    {{ $penduduk->wajib_ktp }}
+                                                @else
+                                                    {{ $penduduk->wajib_ktp . ' - ' . $penduduk->status_ktp->nama . ' - ' . $penduduk->status_rekam_ktp->nama }}
+                                                @endif
+                                            <td>
                                         </tr>
                                         <tr>
                                             <td class="text-semibold" width="25%">Status Kependudukan</td>
@@ -450,9 +456,6 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
-                        <div class="card-footer py-3">
-                            <a href="{{ route('penduduk.index') }}" class="btn btn-danger btn-sm float-end">Kembali</a>
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Rt;
 use App\Models\Rw;
+use Carbon\Carbon;
 use App\Models\Dusun;
 use App\Models\Keluarga;
 use App\Models\Penduduk;
@@ -62,9 +63,16 @@ class KeluargaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Keluarga $keluarga)
+    public function show($id)
     {
-        //
+        $keluarga   = Keluarga::findOrFail($id);
+        $anggota    = Penduduk::where('keluarga_id', $id)->get();
+
+        return view('dashboard.keluarga.details', [
+            'page'      => 'Details Keluarga',
+            'keluarga'  => $keluarga,
+            'anggota'   => $anggota
+        ]);
     }
 
     /**
@@ -74,7 +82,7 @@ class KeluargaController extends Controller
     {
         $dusuns     = Dusun::orderBy('nama')->get();
         $penduduk   = Penduduk::orderBy('nama')->where('hubungan_keluarga_id', '1')->get();
-        $keluarga = Keluarga::findOrFail($id);
+        $keluarga   = Keluarga::findOrFail($id);
 
         return view('dashboard.keluarga.edit', [
             'page'              =>  'Keluarga',
@@ -109,6 +117,20 @@ class KeluargaController extends Controller
 
         Alert::success('Success', 'Data keluarga baru berhasil diperbaharui');
         return redirect()->route('keluarga.index');
+    }
+
+    public function cetak($id)
+    {
+        $tanggalHariIni = Carbon::now();
+        $keluarga       = Keluarga::findOrFail($id);
+        $anggota        = Penduduk::where('keluarga_id', $id)->get();
+
+        return view('dashboard.keluarga.cetak', [
+            'page'      => 'Details Keluarga',
+            'keluarga'  => $keluarga,
+            'anggota'   => $anggota,
+            'tanggal'   => tanggal_indonesia($tanggalHariIni, false)
+        ]);
     }
 
     /**

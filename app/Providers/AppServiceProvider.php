@@ -38,5 +38,9 @@ class AppServiceProvider extends ServiceProvider
         // Setting Data
         $setting = Pengaturan::first();
         View::share('setting', $setting);
+
+        // Tanggal Hari ini
+        $tanggalHariIni = Carbon::now();
+        View::share('tanggal', $tanggalHariIni);
     }
 }

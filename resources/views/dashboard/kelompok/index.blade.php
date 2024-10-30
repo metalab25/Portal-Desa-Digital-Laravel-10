@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3">
-                    <div class="card rounded-4 shadow">
+                    <div class="card rounded-3 mb-3 shadow">
                         <div class="card-header p-3 py-2">
                             <div class="pt-1">
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">Kategori Kelompok</p>
@@ -19,7 +19,7 @@
                                             <td>
                                                 <a href="{{ route('kelompok-kategori.show', $item->id) }}">
                                                     {{ $item->nama }} <span
-                                                        class="float-end">{{ $item->kelompok_count }}</span>
+                                                        class="badge badge-kat-kelompok text-bg-danger float-end">{{ $item->kelompok_count }}</span>
                                                 </a>
                                             </td>
                                         </tr>
@@ -30,7 +30,7 @@
                         <div class="card-footer py-3">
                             <button type="button" class="btn btn-primary btn-full btn-sm mb-0" data-bs-toggle="modal"
                                 data-bs-target="#modalCreate">
-                                Tambah Kategoti
+                                Tambah Kategori
                             </button>
                         </div>
                     </div>
@@ -48,13 +48,13 @@
                                 <table class="table table-striped table-bordered mb-0">
                                     <thead>
                                         <tr>
-                                            <th class="text-center" width="3%">No.</th>
-                                            <th class="text-center">Nama Kelompok</th>
-                                            <th class="text-center">Kode</th>
-                                            <th class="text-center">Ketua</th>
-                                            <th class="text-center">Kategori</th>
-                                            <th class="text-center">Anggota</th>
-                                            <th class="text-center">Aksi</th>
+                                            <th class="text-center align-middle" width="3%">No.</th>
+                                            <th class="text-center align-middle">Nama Kelompok</th>
+                                            <th class="text-center align-middle">Kode</th>
+                                            <th class="text-center align-middle">Ketua</th>
+                                            <th class="text-center align-middle">Kategori</th>
+                                            <th class="text-center align-middle">Anggota</th>
+                                            <th class="text-center align-middle">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -84,10 +84,16 @@
                                                 </td>
                                                 <td class="align-middle text-center">
                                                     <a href="{{ route('kelompok.show', $item->id) }}"
-                                                        class="btn btn-success btn-xs" title="Show">L</a>
-                                                    <a href="{{ route('pemerintah.edit', $item->id) }}"
-                                                        class="btn btn-warning btn-xs" title="Edit">E</a>
-                                                    <a href="" class="btn btn-danger btn-xs" title="Delete">D</a>
+                                                        class="btn btn-success btn-xs mb-sm-1" title="Show">L</a>
+                                                    <a href="" class="btn btn-warning btn-xs mb-sm-1"
+                                                        title="Edit">E</a>
+                                                    <form action="{{ route('kelompok.destroy', $item->id) }}"
+                                                        method="POST" class="d-inline">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn-xs" title="Delete"
+                                                            onclick="return confirm('Apakah Anda yakin ingin menghapus data ini ?')">D</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach

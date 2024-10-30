@@ -19,13 +19,14 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="name" class="form-label">Keterangan Kategori</label>
+                        <label for="deskripsi" class="form-label">Keterangan Kategori</label>
                         <textarea name="deskripsi" id="deskripsi" cols="30" rows="3" class="form-control">{{ old('deskripsi') }}</textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary btn-sm ml-auto">Save</button>
+                    <button type="button" class="btn btn-danger btn-block btn-sm mb-sm-1"
+                        data-bs-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-sm ml-auto">Simpan</button>
                 </div>
             </form>
         </div>

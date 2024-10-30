@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use App\Models\Agama;
 use App\Models\Cacat;
 use App\Models\Dusun;
 use App\Models\CaraKb;
 use App\Models\Keluarga;
 use App\Models\Kehamilan;
+use App\Models\StatusKtp;
 use App\Models\Pendidikan;
 use App\Models\StatusKawin;
 use App\Models\WargaNegara;
@@ -122,6 +124,21 @@ class Penduduk extends Model
     public function cara_kb()
     {
         return $this->belongsTo(CaraKb::class);
+    }
+
+    public function status_ktp()
+    {
+        return $this->belongsTo(StatusKtp::class);
+    }
+
+    public function status_rekam_ktp()
+    {
+        return $this->belongsTo(StatusRekamKtp::class);
+    }
+
+    public function getUmurAttribute()
+    {
+        return Carbon::parse($this->tanggal_lahir)->age;
     }
 
     // public function tanggalLahir(): Attribute

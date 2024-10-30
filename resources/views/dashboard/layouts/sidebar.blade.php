@@ -149,7 +149,7 @@
                         <p>Analisis</p>
                     </a>
                 </li>
-                <li class="nav-item {{ request()->segment(1) == 'statistik' ? 'menu-open' : '' }}">
+                <li class="nav-item {{ request()->segment(1) == 'administrasi' ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-bookmarks"></i>
                         <p>
@@ -158,6 +158,13 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('jabatan.index') }}"
+                                class="nav-link {{ request()->segment(2) == 'jabatan' ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-award"></i>
+                                <p>Jabatan</p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="#"
                                 class="nav-link {{ request()->segment(2) == 'pemerintah' ? 'active' : '' }}">

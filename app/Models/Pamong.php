@@ -16,4 +16,9 @@ class Pamong extends Model
     {
         return $this->belongsTo(Penduduk::class);
     }
+
+    public function jabatan()
+    {
+        return $this->belongsTo(Jabatan::class);
+    }
 }

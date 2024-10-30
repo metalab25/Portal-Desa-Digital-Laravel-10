@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-md-6"></div>
                         <div class="col-md-6">
-                            <button type="button" class="btn btn-primary btn-sm float-end" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-primary btn-block btn-sm float-end" data-bs-toggle="modal"
                                 data-bs-target="#modal-create-kk">
                                 Tambah KK Baru
                             </button>
@@ -20,52 +20,52 @@
                         <table class="table table-striped table-bordered mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-center" width="3%">No.</th>
-                                    <th>Nomor KK</th>
-                                    <th>Kepala Keluarga</th>
-                                    <th class="text-center">NIK</th>
-                                    <th class="text-center">Jenis Kelamin</th>
-                                    <th class="text-center">Anggota</th>
-                                    <th class="text-center">Alamat</th>
-                                    <th class="text-center">{{ $setting->sebutan_dusun }}</th>
-                                    <th class="text-center">RW</th>
-                                    <th class="text-center">RT</th>
-                                    <th class="text-center">Aksi</th>
+                                    <th class="text-center align-middle" width="3%">No.</th>
+                                    <th class="align-middle">Nomor KK</th>
+                                    <th class="align-middle">Kepala Keluarga</th>
+                                    <th class="text-center align-middle">NIK</th>
+                                    <th class="text-center align-middle">Jenis Kelamin</th>
+                                    <th class="text-center align-middle">Anggota</th>
+                                    <th class="text-center align-middle">Alamat</th>
+                                    <th class="text-center align-middle">{{ $setting->sebutan_dusun }}</th>
+                                    <th class="text-center align-middle">RW</th>
+                                    <th class="text-center align-middle">RT</th>
+                                    <th class="text-center align-middle">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($keluargas as $item)
                                     <tr>
-                                        <td class="text-center">
+                                        <td class="text-center align-middle">
                                             {{ ($keluargas->currentPage() - 1) * $keluargas->perPage() + $loop->iteration }}
                                         </td>
-                                        <td>{{ $item->no_kk }}</td>
-                                        <td>
+                                        <td class="align-middle">{{ $item->no_kk }}</td>
+                                        <td class="align-middle">
                                             @if ($item->penduduk_id == null)
                                                 -
                                             @else()
                                                 {{ $item->penduduk->nama }}
                                             @endif
                                         </td>
-                                        <td class="text-center">
+                                        <td class="text-center align-middle">
                                             @if ($item->penduduk_id == null)
                                                 -
                                             @else
                                                 {{ $item->penduduk->nik }}
                                             @endif
                                         </td>
-                                        <td class="text-center">
+                                        <td class="text-center align-middle">
                                             @if ($item->penduduk_id == null)
                                                 -
                                             @else
                                                 {{ $item->penduduk->jenis_kelamin->nama }}
                                             @endif
                                         </td>
-                                        <td class="text-center">{{ $item->anggota_count }}</td>
-                                        <td>{{ $item->alamat }}</td>
-                                        <td class="text-center">{{ $item->dusun->nama }}</td>
-                                        <td class="text-center">{{ $item->rw->nama }}</td>
-                                        <td class="text-center">
+                                        <td class="text-center align-middle">{{ $item->anggota_count }}</td>
+                                        <td class="align-middle">{{ $item->alamat }}</td>
+                                        <td class="text-center align-middle">{{ $item->dusun->nama }}</td>
+                                        <td class="text-center align-middle">{{ $item->rw->nama }}</td>
+                                        <td class="text-center align-middle">
                                             @if ($item->rt_id == null)
                                                 -
                                             @else
@@ -73,11 +73,12 @@
                                             @endif
 
                                         </td>
-                                        <td class="text-center">
-                                            <a href="#" class="btn btn-info btn-xs" title="Show">S</a>
+                                        <td class="text-center align-middle">
+                                            <a href="{{ route('keluarga.show', $item->id) }}"
+                                                class="btn btn-info btn-xs mb-sm-1" title="Show">S</a>
                                             <a href="{{ route('keluarga.edit', $item->id) }}"
-                                                class="btn btn-warning btn-xs">E</a>
-                                            <a href="" class="btn btn-success btn-xs" title="Pindah">P</a>
+                                                class="btn btn-warning btn-xs mb-sm-1">E</a>
+                                            <a href="" class="btn btn-success btn-xs mb-sm-1" title="Pindah">P</a>
                                             <a href="" class="btn btn-danger btn-xs" title="Delete">D</a>
                                         </td>
                                     </tr>

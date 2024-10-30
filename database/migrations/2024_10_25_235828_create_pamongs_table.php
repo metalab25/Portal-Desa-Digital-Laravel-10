@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->string('nik')->nullable();
             $table->string('nip')->nullable();
-            $table->string('jabatan');
+            $table->foreignId('jabatan_id');
             $table->foreignId('penduduk_id')->nullable();
             $table->foreignId('agama_id')->nullable();
             $table->foreignId('jenis_kelamin_id')->nullable();
