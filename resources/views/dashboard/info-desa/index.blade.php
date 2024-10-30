@@ -19,10 +19,10 @@
                                     <input type="hidden" name="oldLogo" value="{{ $desa->logo }}">
                                     @if ($desa->logo)
                                         <img src="{{ asset('storage/' . $desa->logo) }}"
-                                            class="logo-preview rounded-4 img-fluid d-block mx-auto mb-3">
+                                            class="logo-preview img-fluid d-block mx-auto mb-3">
                                     @else
                                         <img src="{{ asset('/assets/dashboard/img/no-picture.webp') }}"
-                                            class="logo-preview rounded-4 img-fluid d-block mx-auto mb-3">
+                                            class="logo-preview img-fluid d-block mx-auto mb-3">
                                     @endif
                                 </div>
                                 <div class="mb-0">

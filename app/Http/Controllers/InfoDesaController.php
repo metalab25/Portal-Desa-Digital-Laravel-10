@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Config;
+use App\Models\Pengaturan;
 use App\Models\Provinsi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -12,8 +13,10 @@ class InfoDesaController extends Controller
 {
     public function index()
     {
+        $setting = Pengaturan::first();
+
         return view('dashboard.info-desa.index', [
-            'page'      =>  'Identitas Desa',
+            'page'      =>  'Identitas' . $setting->sebutan_desa,
             'provinsi'  =>  Provinsi::orderBy('nama')->get(),
             'desa'      =>  Config::first()
         ]);
