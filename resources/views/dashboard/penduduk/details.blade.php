@@ -9,7 +9,8 @@
                 </div>
                 <div class="col-md-6">
                     <div class="float-end float-end-sm-none">
-                        <a href="#" class="btn btn-success btn-block btn-sm mb-sm-1">Cetak Biodata</a>
+                        <a href="{{ route('penduduk.cetak', $penduduk->id) }}" target="_blank"
+                            class="btn btn-success btn-block btn-sm mb-sm-1">Cetak Biodata</a>
                         <a href="{{ route('penduduk.edit', $penduduk->id) }}" class="btn btn-warning btn-block btn-sm">Ubah
                             Data</a>
                     </div>
