@@ -136,8 +136,7 @@
                                             value="{{ old('nama', $pamong->nama) }}" placeholder="Nama Lengkap Pejabat">
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="text-xs text-danger pt-2">Diisi apabila bukan penduduk
-                                            {{ $setting->sebutan_desa }}</div>
+                                        <div class="text-xs text-danger pt-2">Diisi apabila bukan penduduk {{ $setting->sebutan_desa }}</div>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-3">
@@ -147,8 +146,7 @@
                                             value="{{ old('nik', $pamong->nik) }}" placeholder="NIK Pejabat">
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="text-xs text-danger pt-2">Diisi apabila bukan penduduk
-                                            {{ $setting->sebutan_desa }}</div>
+                                      <div class="text-xs text-danger pt-2">Diisi apabila bukan penduduk {{ $setting->sebutan_desa }}</div>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-3">
@@ -171,8 +169,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="text-xs text-danger pt-2">Diisi apabila bukan penduduk
-                                            {{ $setting->sebutan_desa }}</div>
+                                        <div class="text-xs text-danger pt-2">Diisi apabila bukan penduduk {{ $setting->sebutan_desa }}</div>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-3">
@@ -183,8 +180,7 @@
                                             placeholder="Tuliskan Tempat Lahir">
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="text-xs text-danger pt-2">Diisi apabila bukan penduduk
-                                            {{ $setting->sebutan_desa }}</div>
+                                          <div class="text-xs text-danger pt-2">Diisi apabila bukan penduduk  {{ $setting->sebutan_desa }}</div>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-3">
@@ -195,8 +191,7 @@
                                             value="{{ old('tanggal_lahir', $pamong->tanggal_lahir) }}">
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="text-xs text-danger pt-2">Diisi apabila bukan penduduk
-                                            {{ $setting->sebutan_desa }}</div>
+                                          <div class="text-xs text-danger pt-2">Diisi apabila bukan penduduk {{ $setting->sebutan_desa }}</div>
                                     </div>
                                 </div>
                             </div>

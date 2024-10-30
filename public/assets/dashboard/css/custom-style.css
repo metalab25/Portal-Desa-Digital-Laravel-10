@@ -119,10 +119,12 @@ img.avatar-pamong {
     font-size: 1rem;
 }
 
+
 @media (max-width: 576px) {
     .hidden-xs {
         display: none !important;
     }
+  
     .btn-block {
         width: 100%;
     }

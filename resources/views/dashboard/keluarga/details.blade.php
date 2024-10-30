@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="card rounded-3">
                 <div class="card-header">
-                    <div class="float-end float-end-sm-none">
+                <div class="float-end float-end-sm-none">
                         <a href="{{ route('keluarga.cetak', $keluarga->id) }}" target="_blank"
                             class="btn btn-success btn-block btn-sm mb-sm-1">Cetak Kartu
                             Keluarga</a>
@@ -49,7 +49,7 @@
                             <tbody>
                                 @foreach ($anggota as $item)
                                     <tr>
-                                        <td class="text-center align-middle">
+                                    <td class="text-center align-middle">
                                             {{ $loop->iteration }}
                                         </td>
                                         <td class="align-middle">{{ $item->nik }}</td>
@@ -61,6 +61,7 @@
                                             <a href="{{ route('penduduk.edit', $item->id) }}"
                                                 class="btn btn-warning btn-xs mb-sm-1">E</a>
                                             <a href="" class="btn btn-success btn-xs mb-sm-1" title="Pindah">P</a>
+
                                             <a href="" class="btn btn-danger btn-xs" title="Delete">D</a>
                                         </td>
                                     </tr>
