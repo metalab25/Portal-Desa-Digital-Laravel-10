@@ -38,7 +38,7 @@ class PendudukController extends Controller
      */
     public function index()
     {
-        $penduduk = Penduduk::orderBy('keluarga_id', 'asc')->paginate(6);
+        $penduduk = Penduduk::orderBy('keluarga_id', 'asc')->paginate(8);
 
         return view('dashboard.penduduk.index', [
             'page'      => 'Penduduk',

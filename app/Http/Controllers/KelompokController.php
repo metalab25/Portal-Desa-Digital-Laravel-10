@@ -116,8 +116,13 @@ class KelompokController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Kelompok $kelompok)
+    public function destroy($id)
     {
-        //
+        $kelompok = Kelompok::findOrFail($id);
+        $kelompok->delete();
+
+        Alert::success('Success', 'Data kelompok berhasil dihapus');
+
+        return redirect()->route('kelompok.index');
     }
 }

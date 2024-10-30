@@ -14,6 +14,7 @@ use App\Http\Controllers\KelompokController;
 use App\Http\Controllers\KeluargaController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\KelompokAnggotaController;
 use App\Http\Controllers\KelompokKategoriController;
@@ -59,6 +60,7 @@ Route::get('/desa/pemerintah/cetak', [PamongController::class, 'cetak'])->name('
 Route::resource('/desa/pemerintah', PamongController::class)->middleware('auth');
 
 // Keluarga
+Route::get('/kependudukan/keluarga/cetak/{id}', [KeluargaController::class, 'cetak'])->name('keluarga.cetak');
 Route::resource('/kependudukan/keluarga', KeluargaController::class)->middleware('auth');
 Route::get('/get-rw/{dusun_id}', [KeluargaController::class, 'getRwByDusun']);
 Route::get('/get-rt/{rw_id}', [KeluargaController::class, 'getRtByRw']);

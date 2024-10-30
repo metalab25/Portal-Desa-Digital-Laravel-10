@@ -7,10 +7,10 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="{{ route('rw.index') }}" class="btn btn-danger btn-sm">Kembali</a>
+                            <a href="{{ route('rw.index') }}" class="btn btn-danger btn-block btn-sm mb-sm-1">Kembali</a>
                         </div>
                         <div class="col-md-6">
-                            <button type="button" class="btn btn-primary btn-sm float-end" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-primary btn-block btn-sm float-end" data-bs-toggle="modal"
                                 data-bs-target="#modal-add-rt">
                                 Tambah RT
                             </button>
@@ -32,19 +32,19 @@
                             <tbody>
                                 @foreach ($rts as $item)
                                     <tr>
-                                        <td class="text-center">
+                                        <td class="text-center align-middle-sm">
                                             {{ ($rts->currentPage() - 1) * $rts->perPage() + $loop->iteration }}</td>
-                                        <td class="text-center">{{ $item->nama }}</td>
-                                        <td>
+                                        <td class="text-center align-middle-sm">{{ $item->nama }}</td>
+                                        <td class="align-middle-sm">
                                             @if ($item->penduduk_id == null)
                                                 -
                                             @else()
                                                 Baharudin
                                             @endif
                                         </td>
-                                        <td class="text-center">{{ $item->keluarga_count }}</td>
-                                        <td class="text-center">
-                                            <a href="" class="btn btn-warning btn-xs" title="Edit">E</a>
+                                        <td class="text-center align-middle-sm">{{ $item->keluarga_count }}</td>
+                                        <td class="text-center align-middle-sm">
+                                            <a href="" class="btn btn-warning btn-xs mb-sm-1" title="Edit">E</a>
                                             <a href="" class="btn btn-danger btn-xs" title="Delete">D</a>
                                         </td>
                                     </tr>

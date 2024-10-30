@@ -258,7 +258,7 @@
                                 </div>
                             </div>
                             <div class="card-footer py-3">
-                                <button type="submit" class="btn btn-success btn-sm float-end">Simpan</button>
+                                <button type="submit" class="btn btn-primary btn-block btn-sm float-end">Simpan</button>
                             </div>
                         </div>
                     </div>

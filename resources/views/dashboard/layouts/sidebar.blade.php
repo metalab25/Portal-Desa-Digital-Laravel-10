@@ -149,7 +149,7 @@
                         <p>Analisis</p>
                     </a>
                 </li>
-                <li class="nav-item {{ request()->segment(1) == 'statistik' ? 'menu-open' : '' }}">
+                <li class="nav-item {{ request()->segment(1) == 'administrasi' ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-bookmarks"></i>
                         <p>

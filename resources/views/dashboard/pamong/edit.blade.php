@@ -136,8 +136,7 @@
                                             value="{{ old('nama', $pamong->nama) }}" placeholder="Nama Lengkap Pejabat">
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="text-sm text-danger pt-2">Diisi apabila bukan penduduk
-                                            {{ $setting->sebutan_desa }}</div>
+                                        <div class="text-xs text-danger pt-2">Diisi apabila bukan penduduk {{ $setting->sebutan_desa }}</div>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-3">
@@ -147,8 +146,7 @@
                                             value="{{ old('nik', $pamong->nik) }}" placeholder="NIK Pejabat">
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="text-sm text-danger pt-2">Diisi apabila bukan penduduk
-                                            {{ $setting->sebutan_desa }}</div>
+                                      <div class="text-xs text-danger pt-2">Diisi apabila bukan penduduk {{ $setting->sebutan_desa }}</div>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-3">
@@ -171,8 +169,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="text-sm text-danger pt-2">Diisi apabila bukan penduduk
-                                            {{ $setting->sebutan_desa }}</div>
+                                        <div class="text-xs text-danger pt-2">Diisi apabila bukan penduduk {{ $setting->sebutan_desa }}</div>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-3">
@@ -183,8 +180,7 @@
                                             placeholder="Tuliskan Tempat Lahir">
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="text-sm text-danger pt-2">Diisi apabila bukan penduduk
-                                            {{ $setting->sebutan_desa }}</div>
+                                          <div class="text-xs text-danger pt-2">Diisi apabila bukan penduduk  {{ $setting->sebutan_desa }}</div>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-3">
@@ -195,14 +191,14 @@
                                             value="{{ old('tanggal_lahir', $pamong->tanggal_lahir) }}">
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="text-sm text-danger pt-2">Diisi apabila bukan penduduk
-                                            {{ $setting->sebutan_desa }}</div>
+                                          <div class="text-xs text-danger pt-2">Diisi apabila bukan penduduk {{ $setting->sebutan_desa }}</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer py-3">
-                                <a href="{{ route('pemerintah.index') }}" class="btn btn-danger btn-sm">Batal</a>
-                                <button type="submit" class="btn btn-primary btn-sm float-end">Simpan</button>
+                                <a href="{{ route('pemerintah.index') }}"
+                                    class="btn btn-danger btn-block btn-sm mb-sm-2">Batal</a>
+                                <button type="submit" class="btn btn-primary btn-sm btn-block float-end">Simpan</button>
                             </div>
                         </div>
                     </div>

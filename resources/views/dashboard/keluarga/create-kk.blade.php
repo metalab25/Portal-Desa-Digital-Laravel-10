@@ -83,8 +83,9 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Tutup</button>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="button" class="btn btn-danger btn-block btn-sm mb-sm-1"
+                        data-bs-dismiss="modal">Tutup</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-sm">Simpan</button>
                 </div>
             </form>
         </div>

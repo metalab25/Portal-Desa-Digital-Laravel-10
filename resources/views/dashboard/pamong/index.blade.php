@@ -5,16 +5,12 @@
         <div class="container-fluid">
             <div class="card rounded-4 shadow">
                 <div class="card-header">
-                    <div class="row">
-                        <div class="col-md-6"></div>
-                        <div class="col-md-6">
-                            <div class="float-end">
-                                <a href="{{ route('pemerintah.cetak') }}" target="_blank" class="btn btn-success btn-sm">Cetak
-                                    Data</a>
-                                <a href="{{ route('pemerintah.create') }}" class="btn btn-primary btn-sm">Tambah
-                                    Pemerintah {{ $setting->sebutan_desa }}</a>
-                            </div>
-                        </div>
+                    <div class="float-end float-end-sm-none">
+                        <a href="{{ route('pemerintah.cetak') }}" target="_blank"
+                            class="btn btn-success btn-block btn-sm mb-sm-1">Cetak
+                            Data</a>
+                        <a href="{{ route('pemerintah.create') }}" class="btn btn-primary btn-block btn-sm">Tambah
+                            Pemerintah {{ $setting->sebutan_desa }}</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -22,15 +18,15 @@
                         <table class="table table-striped table-bordered mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-center" width="3%">No.</th>
-                                    <th>Foto</th>
-                                    <th>Kepala Keluarga</th>
-                                    <th class="text-center">Jabatan</th>
-                                    <th class="text-center">Nomor SK</th>
-                                    <th class="text-center">Tanggal SK</th>
-                                    <th class="text-center">Pendidikan</th>
-                                    <th class="text-center">Jenis Kelamin</th>
-                                    <th class="text-center">Aksi</th>
+                                    <th class="text-center align-middle" width="3%">No.</th>
+                                    <th class="align-middle">Foto</th>
+                                    <th class="align-middle">Kepala Keluarga</th>
+                                    <th class="text-center align-middle">Jabatan</th>
+                                    <th class="text-center align-middle">Nomor SK</th>
+                                    <th class="text-center align-middle">Tanggal SK</th>
+                                    <th class="text-center align-middle">Pendidikan</th>
+                                    <th class="text-center align-middle">Jenis Kelamin</th>
+                                    <th class="text-center align-middle">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -75,10 +71,9 @@
                                         <td class="align-middle text-center">{{ $item->penduduk->jenis_kelamin->nama }}
                                         </td>
                                         <td class="align-middle text-center">
-                                            <a href="{{ route('pemerintah.show', $item->id) }}" class="btn btn-info btn-xs"
-                                                title="Show">S</a>
-                                            <a href="{{ route('pemerintah.edit', $item->id) }}"
-                                                class="btn btn-warning btn-xs" title="Edit">E</a>
+                                            <a href="{{ route('pemerintah.show', $item->id) }}"
+                                                class="btn btn-info btn-xs mb-sm-1" title="Show">S</a>
+                                            <a href="{{ route('pemerintah.edit', $item->id) }}" class="btn btn-warning btn-xs mb-sm-1" title="Edit">E</a>
                                             <form action="{{ route('pemerintah.destroy', $item->id) }}" method="POST"
                                                 class="d-inline">
                                                 @csrf

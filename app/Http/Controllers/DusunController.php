@@ -102,10 +102,12 @@ class DusunController extends Controller
         $setting = Pengaturan::first();
 
         $request->validate([
+            'nama'  => 'required',
             'penduduk_id' => 'nullable|exists:penduduks,id'
         ]);
 
         $dusun = Dusun::findOrFail($id);
+        $dusun->nama = $request->nama;
         $dusun->penduduk_id = $request->penduduk_id;
         $dusun->save();
 
