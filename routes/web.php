@@ -8,13 +8,15 @@ use App\Http\Controllers\RwController;
 use App\Http\Controllers\DusunController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PamongController;
+use App\Http\Controllers\BantuanController;
+use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\InfoDesaController;
 use App\Http\Controllers\KelompokController;
 use App\Http\Controllers\KeluargaController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\JabatanController;
 use App\Http\Controllers\PengaturanController;
+use App\Http\Controllers\BantuanPenerimaController;
 use App\Http\Controllers\KelompokAnggotaController;
 use App\Http\Controllers\KelompokKategoriController;
 
@@ -80,3 +82,10 @@ Route::resource('/kependudukan/kelompok/anggota', KelompokAnggotaController::cla
 
 // Jabatan
 Route::resource('/administrasi/jabatan', JabatanController::class)->middleware('auth');
+
+// Bantuan
+Route::get('/bantuan/cetak-bantuan/{id}', [BantuanController::class, 'cetakBantuan'])->name('bantuan.cetak-bantuan')->middleware('auth');
+Route::resource('/bantuan', BantuanController::class)->middleware('auth');
+
+// Penerima Bantuan
+Route::resource('/bantuan/penerima', BantuanPenerimaController::class)->middleware('auth');

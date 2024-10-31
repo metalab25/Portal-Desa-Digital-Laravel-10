@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\Agama;
+use App\Models\BantuanSasaran;
 use App\Models\Cacat;
 use App\Models\CaraKb;
 use App\Models\Config;
@@ -955,6 +956,17 @@ class DatabaseSeeder extends Seeder
         ]);
         KelompokJabatan::create([
             'nama'  => 'Anggota'
+        ]);
+
+        // Sasaran Bantuan
+        BantuanSasaran::create([
+            'nama'  => 'Penduduk'
+        ]);
+        BantuanSasaran::create([
+            'nama'  => 'Keluarga'
+        ]);
+        BantuanSasaran::create([
+            'nama'  => 'Kelompok'
         ]);
     }
 }

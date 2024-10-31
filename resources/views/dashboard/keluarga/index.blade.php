@@ -71,6 +71,7 @@
                                             @else
                                                 {{ $item->rt->nama }}
                                             @endif
+
                                         </td>
                                         <td class="text-center align-middle">
                                             <a href="{{ route('keluarga.show', $item->id) }}"
