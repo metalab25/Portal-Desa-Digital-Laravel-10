@@ -241,6 +241,13 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('bantuan.index') }}"
+                        class="nav-link {{ request()->segment(1) == 'bantuan' ? 'active' : '' }}">
+                        <i class="nav-icon bi bi-gift"></i>
+                        <p>Bantuan</p>
+                    </a>
+                </li>
                 <li class="nav-item {{ request()->segment(1) == 'statistik' ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-tv"></i>

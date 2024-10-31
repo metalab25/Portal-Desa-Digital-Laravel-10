@@ -33,7 +33,7 @@
     <div class="row mt-5">
         <div class="col-1">
             <div class="d-flex justify-content-center">
-                <img src="{{ asset('assets/dashboard/img/pancasila.png') }}" class="img-fluid d-block mx-auto">
+                <img src="{{ asset('assets/dashboard/img/pancasila.png') }}" class="img-fluid d-block mx-auto mb-2">
             </div>
         </div>
         <div class="col-sm-6">
@@ -379,8 +379,6 @@
         </div>
     </div>
     <p class="text-center text-xs">Dokumen ini dicetak menggunakan aplikasi Portal Desa Digital</p>
-
-
 
     <button onclick="window.print()" class="no-print">Cetak Halaman</button>
 </body>

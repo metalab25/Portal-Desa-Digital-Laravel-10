@@ -73,7 +73,8 @@
                                         <td class="align-middle text-center">
                                             <a href="{{ route('pemerintah.show', $item->id) }}"
                                                 class="btn btn-info btn-xs mb-sm-1" title="Show">S</a>
-                                            <a href="{{ route('pemerintah.edit', $item->id) }}" class="btn btn-warning btn-xs mb-sm-1" title="Edit">E</a>
+                                            <a href="{{ route('pemerintah.edit', $item->id) }}"
+                                                class="btn btn-warning btn-xs mb-sm-1" title="Edit">E</a>
                                             <form action="{{ route('pemerintah.destroy', $item->id) }}" method="POST"
                                                 class="d-inline">
                                                 @csrf
