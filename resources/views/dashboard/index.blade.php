@@ -53,17 +53,14 @@
                 <div class="col-lg-3 col-6">
                     <div class="small-box text-bg-danger rounded-3">
                         <div class="inner">
-                            <h3 class="font-outfit">65</h3>
-                            <p>Unique Visitors</p>
-                        </div> <svg class="small-box-icon" fill="currentColor" viewBox="0 0 24 24"
+                            <h3 class="font-outfit">{{ $kel_count }}</h3>
+                            <p>Kelompok</p>
+                        </div> <svg class="small-box-icon" fill="currentColor" viewBox="0 0 18 18"
                             xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path clip-rule="evenodd" fill-rule="evenodd"
-                                d="M2.25 13.5a8.25 8.25 0 018.25-8.25.75.75 0 01.75.75v6.75H18a.75.75 0 01.75.75 8.25 8.25 0 01-16.5 0z">
-                            </path>
-                            <path clip-rule="evenodd" fill-rule="evenodd"
-                                d="M12.75 3a.75.75 0 01.75-.75 8.25 8.25 0 018.25 8.25.75.75 0 01-.75.75h-7.5a.75.75 0 01-.75-.75V3z">
-                            </path>
-                        </svg> <a href="#"
+                            <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+                            <path
+                                d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.4 5.4 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2z" />
+                        </svg> <a href="{{ route('kelompok.index') }}"
                             class="small-box-footer link-light link-underline-opacity-0 link-underline-opacity-50-hover">
                             More info <i class="bi bi-link-45deg"></i> </a>
                     </div>
