@@ -31,10 +31,32 @@ class StatistikController extends Controller
         $penerima = DB::table('bantuan_penerimas')
             ->join('bantuan_sasarans', 'bantuan_penerimas.bantuan_sasaran_id', '=', 'bantuan_sasarans.id')
             ->where('bantuan_penerimas.bantuan_id', $id)
-            // ->where('bantuan_sasarans.id', 2)
             ->count();
 
         return view('dashboard.statistik.bantuan', [
+            'page'      => 'Statistik Program Bantuan',
+            'bantuans'  => $bantuans,
+            'penerima'  => $penerima,
+            'penduduk'  => $penduduk,
+            'keluarga'  => $keluarga,
+            'kelompok'  => $kelompok,
+            'program'   => $program
+        ]);
+    }
+
+    public function bantuanCetak($id)
+    {
+        $bantuans   = Bantuan::orderBy('nama')->get();
+        $keluarga   = Keluarga::count();
+        $penduduk   = Penduduk::count();
+        $kelompok   = Kelompok::count();
+        $program    = Bantuan::findOrFail($id);
+        $penerima = DB::table('bantuan_penerimas')
+            ->join('bantuan_sasarans', 'bantuan_penerimas.bantuan_sasaran_id', '=', 'bantuan_sasarans.id')
+            ->where('bantuan_penerimas.bantuan_id', $id)
+            ->count();
+
+        return view('dashboard.statistik.bantuan-cetak', [
             'page'      => 'Statistik Program Bantuan',
             'bantuans'  => $bantuans,
             'penerima'  => $penerima,

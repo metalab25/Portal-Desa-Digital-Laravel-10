@@ -92,5 +92,6 @@ Route::resource('/bantuan', BantuanController::class)->middleware('auth');
 Route::resource('/bantuan/penerima', BantuanPenerimaController::class)->middleware('auth');
 
 // Statistik
+Route::get('/statistik/bantuan/cetak/{id}', [StatistikController::class, 'bantuanCetak'])->name('statistik.bantuan.cetak')->middleware('auth');
 Route::get('/statistik/bantuan/{id}', [StatistikController::class, 'bantuan'])->name('statistik.bantuan')->middleware('auth');
 Route::get('/statistik', [StatistikController::class, 'index'])->name('statistik.index')->middleware('auth');
