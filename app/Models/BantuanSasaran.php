@@ -19,7 +19,7 @@ class BantuanSasaran extends Model
         return $this->belongsTo(Bantuan::class);
     }
 
-    public function penerima()
+    public function penerimas()
     {
         return $this->hasMany(BantuanPenerima::class);
     }

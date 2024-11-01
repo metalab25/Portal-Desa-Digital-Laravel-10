@@ -15,6 +15,7 @@ use App\Http\Controllers\KelompokController;
 use App\Http\Controllers\KeluargaController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\BantuanPenerimaController;
 use App\Http\Controllers\KelompokAnggotaController;
@@ -89,3 +90,7 @@ Route::resource('/bantuan', BantuanController::class)->middleware('auth');
 
 // Penerima Bantuan
 Route::resource('/bantuan/penerima', BantuanPenerimaController::class)->middleware('auth');
+
+// Statistik
+Route::get('/statistik/bantuan/{id}', [StatistikController::class, 'bantuan'])->name('statistik.bantuan')->middleware('auth');
+Route::get('/statistik', [StatistikController::class, 'index'])->name('statistik.index')->middleware('auth');

@@ -89,8 +89,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'identitas' ? 'active' : '' }}">
+                            <a href="{{ route('statistik.index') }}"
+                                class="nav-link {{ request()->segment(1) == 'statistik' ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-bar-chart-fill"></i>
                                 <p>Statistik Kependudukan</p>
                             </a>
@@ -111,7 +111,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item {{ request()->segment(1) == 'statistik' ? 'menu-open' : '' }}">
+                <li class="nav-item ">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-printer"></i>
                         <p>
@@ -121,22 +121,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'pemerintah' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-file-earmark-medical"></i>
                                 <p>Pengaturan Surat</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'identitas' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-file-earmark-break"></i>
                                 <p>Cetak Surat</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'wilayah' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-archive"></i>
                                 <p>Arsip Surat</p>
                             </a>
@@ -144,7 +141,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link {{ request()->segment(1) == 'setting' ? 'active' : '' }}">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-clipboard-check"></i>
                         <p>Analisis</p>
                     </a>
@@ -166,75 +163,66 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'pemerintah' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-file-earmark-arrow-down"></i>
                                 <p>Surat Masuk</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'identitas' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-file-earmark-arrow-up"></i>
                                 <p>Surat Keluar</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'wilayah' ? 'active' : '' }}">
+                            <a href="#" class="nav-link ">
                                 <i class="nav-icon bi bi-award"></i>
                                 <p>Surat Keputusan</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'wilayah' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-file-earmark-ruled"></i>
                                 <p>Peraturan {{ $setting->sebutan_desa }}</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'wilayah' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-boxes"></i>
                                 <p>Inventaris</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'wilayah' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-tags"></i>
                                 <p>Klasifikasi Surat</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item {{ request()->segment(1) == 'statistik' ? 'menu-open' : '' }}">
+                <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-cash-coin"></i>
                         <p>
-                            Keuangan {{ $setting->sebutan_desa }}
+                            Keuangan
                             <i class="nav-arrow bi bi-chevron-right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'pemerintah' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-bank"></i>
                                 <p>Sumber Dana</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'identitas' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-calculator"></i>
                                 <p>Anggaran</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'wilayah' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-basket2"></i>
                                 <p>Realisasi</p>
                             </a>
@@ -248,7 +236,7 @@
                         <p>Bantuan</p>
                     </a>
                 </li>
-                <li class="nav-item {{ request()->segment(1) == 'statistik' ? 'menu-open' : '' }}">
+                <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-tv"></i>
                         <p>
@@ -258,36 +246,32 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'pemerintah' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-file-earmark-post"></i>
                                 <p>Artikel</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'identitas' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-menu-button-wide-fill"></i>
                                 <p>Widget</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'identitas' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-menu-button-wide"></i>
                                 <p>Menu</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'wilayah' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-images"></i>
                                 <p>Galeri</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item {{ request()->segment(1) == 'statistik' ? 'menu-open' : '' }}">
+                <li class="nav-item ">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-cast"></i>
                         <p>
@@ -297,15 +281,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'identitas' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-jurnal-code"></i>
                                 <p>Laporan Penduduk</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#"
-                                class="nav-link {{ request()->segment(2) == 'identitas' ? 'active' : '' }}">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon bi bi-qr-code-scan"></i>
                                 <p>Pendaftaran Mandiri</p>
                             </a>

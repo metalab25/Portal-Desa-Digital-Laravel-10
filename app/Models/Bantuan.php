@@ -25,4 +25,9 @@ class Bantuan extends Model
     {
         return $this->hasMany(BantuanSasaran::class);
     }
+
+    public function penerima()
+    {
+        return $this->hasMany(BantuanPenerima::class);
+    }
 }

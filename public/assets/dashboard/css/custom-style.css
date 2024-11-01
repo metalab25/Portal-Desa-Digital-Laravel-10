@@ -28,6 +28,10 @@ a:hover {
     text-decoration: none !important;
 }
 
+.app-main .app-content-header .breadcrumb {
+  font-size: 0.9em;
+}
+
 .pagination {
     margin-bottom: 0 !important;
 }
@@ -64,7 +68,7 @@ a:hover {
 }
 
 .table-kategori {
-    font-size: 1em !important;
+    font-size: 0.9em !important;
 }
 
 .btn-xs, .btn-group-xs > .btn {

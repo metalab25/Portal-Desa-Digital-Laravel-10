@@ -16,19 +16,19 @@ class BantuanPenerima extends Model
     protected $guarded = ['id'];
     protected $table = 'bantuan_penerimas';
 
-    public function keluarga()
-    {
-        return $this->belongsTo(Keluarga::class);
-    }
-
     public function penduduk()
     {
-        return $this->belongsTo(Penduduk::class);
+        return $this->belongsTo(Penduduk::class, 'penduduk_id');
+    }
+
+    public function keluarga()
+    {
+        return $this->belongsTo(Keluarga::class, 'keluarga_id');
     }
 
     public function kelompok()
     {
-        return $this->belongsTo(Kelompok::class);
+        return $this->belongsTo(Kelompok::class, 'kelompok_id');
     }
 
     public function sasaran()
