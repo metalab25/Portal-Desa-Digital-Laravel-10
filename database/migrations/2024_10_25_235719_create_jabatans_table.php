@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('jabatans', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->string('excerpt')->nullable();
             $table->longText('tupoksi')->nullable();
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }
