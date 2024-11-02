@@ -11,4 +11,9 @@ class Agama extends Model
 
     protected $guarded = ['id'];
     protected $table = 'agamas';
+
+    public function penduduks()
+    {
+        return $this->hasMany(Penduduk::class, 'agama_id');
+    }
 }

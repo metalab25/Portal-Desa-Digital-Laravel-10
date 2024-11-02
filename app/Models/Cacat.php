@@ -11,4 +11,9 @@ class Cacat extends Model
 
     protected $guarded = ['id'];
     protected $table = 'cacats';
+
+    public function penduduks()
+    {
+        return $this->hasMany(Penduduk::class, 'cacat_id');
+    }
 }

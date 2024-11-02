@@ -11,4 +11,9 @@ class GolonganDarah extends Model
 
     protected $guarded = ['id'];
     protected $table = 'golongan_darahs';
+
+    public function penduduks()
+    {
+        return $this->hasMany(Penduduk::class, 'golongan_darah_id');
+    }
 }

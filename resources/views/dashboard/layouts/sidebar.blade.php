@@ -90,9 +90,16 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('statistik.index') }}"
-                                class="nav-link {{ request()->segment(1) == 'statistik' ? 'active' : '' }}">
+                                class="nav-link {{ request()->segment(2) == 'kependudukan' ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-bar-chart-fill"></i>
-                                <p>Statistik Kependudukan</p>
+                                <p>Statistik Penduduk</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('statistik.bantuan-index') }}"
+                                class="nav-link {{ request()->segment(2) == 'bantuan' ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-clipboard-data"></i>
+                                <p>Statistik Bantuan</p>
                             </a>
                         </li>
                         <li class="nav-item">
