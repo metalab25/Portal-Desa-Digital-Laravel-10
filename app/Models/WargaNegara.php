@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Penduduk;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class WargaNegara extends Model
 {
@@ -11,4 +12,9 @@ class WargaNegara extends Model
 
     protected $guarded = ['id'];
     protected $table = 'warga_negaras';
+
+    public function penduduks()
+    {
+        return $this->hasMany(Penduduk::class, 'warga_negara_id');
+    }
 }

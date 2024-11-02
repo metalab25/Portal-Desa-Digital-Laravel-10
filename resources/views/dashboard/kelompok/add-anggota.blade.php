@@ -10,7 +10,7 @@
                 <div class="modal-body">
                     <input type="hidden" value="{{ old('kelompok_id', $kelompok->id) }}" name="kelompok_id">
                     <div class="form-group mb-3">
-                        <label for="penduduk_id" class="form-label">Nama Penduduk</label>
+                        <label for="penduduk_id" class="form-label">Nama Kelompok</label>
                         <select id="penduduk_id" name="penduduk_id"
                             class="form-control form-select @error('penduduk_id') is-invalid @enderror">
                             <option value="">-- Pilih Penduduk -- </option>

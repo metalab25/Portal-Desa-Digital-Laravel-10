@@ -94,4 +94,16 @@ Route::resource('/bantuan/penerima', BantuanPenerimaController::class)->middlewa
 // Statistik
 Route::get('/statistik/bantuan/cetak/{id}', [StatistikController::class, 'bantuanCetak'])->name('statistik.bantuan.cetak')->middleware('auth');
 Route::get('/statistik/bantuan/{id}', [StatistikController::class, 'bantuan'])->name('statistik.bantuan')->middleware('auth');
-Route::get('/statistik', [StatistikController::class, 'index'])->name('statistik.index')->middleware('auth');
+Route::get('/statistik/bantuan', [StatistikController::class, 'bantuanIndex'])->name('statistik.bantuan-index')->middleware('auth');
+Route::get('/statistik/kependudukan/agama', [StatistikController::class, 'agama'])->name('statistik.agama')->middleware('auth');
+Route::get('/statistik/kependudukan/jenis-kelamin', [StatistikController::class, 'jenisKelamin'])->name('statistik.jenis-kelamin')->middleware('auth');
+Route::get('/statistik/kependudukan/pendidikan-ditempuh', [StatistikController::class, 'pendididkanDitempuh'])->name('statistik.pendidikan-ditempuh')->middleware('auth');
+Route::get('/statistik/kependudukan/pendidikan-kk', [StatistikController::class, 'pendididkanKK'])->name('statistik.pendidikan-kk')->middleware('auth');
+Route::get('/statistik/kependudukan/pekerjaan', [StatistikController::class, 'pekerjaan'])->name('statistik.pekerjaan')->middleware('auth');
+Route::get('/statistik/kependudukan/warganegara', [StatistikController::class, 'wargaNegara'])->name('statistik.warganegara')->middleware('auth');
+Route::get('/statistik/kependudukan/status-kawin', [StatistikController::class, 'statusKawin'])->name('statistik.status-kawin')->middleware('auth');
+Route::get('/statistik/kependudukan/golongan-darah', [StatistikController::class, 'golonganDarah'])->name('statistik.golongan-darah')->middleware('auth');
+Route::get('/statistik/kependudukan/cacat', [StatistikController::class, 'cacat'])->name('statistik.cacat')->middleware('auth');
+Route::get('/statistik/kependudukan/sakit-menahun', [StatistikController::class, 'sakitMenahun'])->name('statistik.sakit-menahun')->middleware('auth');
+Route::get('/statistik/kependudukan/cara-kb', [StatistikController::class, 'caraKB'])->name('statistik.cara-kb')->middleware('auth');
+Route::get('/statistik/kependudukan', [StatistikController::class, 'index'])->name('statistik.index')->middleware('auth');

@@ -11,4 +11,9 @@ class Pekerjaan extends Model
 
     protected $guarded = ['id'];
     protected $table = 'pekerjaans';
+
+    public function penduduks()
+    {
+        return $this->hasMany(Penduduk::class, 'pekerjaan_id');
+    }
 }

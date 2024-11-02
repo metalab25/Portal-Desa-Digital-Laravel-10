@@ -11,4 +11,9 @@ class CaraKb extends Model
 
     protected $guarded = ['id'];
     protected $table = 'cara_kbs';
+
+    public function penduduks()
+    {
+        return $this->hasMany(Penduduk::class, 'cara_kb_id');
+    }
 }

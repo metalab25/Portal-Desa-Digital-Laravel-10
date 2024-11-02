@@ -11,4 +11,9 @@ class Pendidikan extends Model
 
     protected $guarded = ['id'];
     protected $table = 'pendidikans';
+
+    public function penduduks()
+    {
+        return $this->hasMany(Penduduk::class, 'pendidikan_id');
+    }
 }
