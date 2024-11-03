@@ -20,6 +20,7 @@ use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\BantuanPenerimaController;
 use App\Http\Controllers\KelompokAnggotaController;
 use App\Http\Controllers\KelompokKategoriController;
+use App\Http\Controllers\KlasifikasiSuratController;
 
 /*
 |--------------------------------------------------------------------------
@@ -107,3 +108,6 @@ Route::get('/statistik/kependudukan/cacat', [StatistikController::class, 'cacat'
 Route::get('/statistik/kependudukan/sakit-menahun', [StatistikController::class, 'sakitMenahun'])->name('statistik.sakit-menahun')->middleware('auth');
 Route::get('/statistik/kependudukan/cara-kb', [StatistikController::class, 'caraKB'])->name('statistik.cara-kb')->middleware('auth');
 Route::get('/statistik/kependudukan', [StatistikController::class, 'index'])->name('statistik.index')->middleware('auth');
+
+// Klasifikasi Surat
+Route::resource('/administrasi/klasifikasi-surat', KlasifikasiSuratController::class)->middleware('auth');

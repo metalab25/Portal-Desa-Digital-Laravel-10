@@ -79,7 +79,9 @@
                                             <a href="{{ route('keluarga.edit', $item->id) }}"
                                                 class="btn btn-warning btn-xs mb-sm-1">E</a>
                                             <a href="" class="btn btn-success btn-xs mb-sm-1" title="Pindah">P</a>
-                                            <a href="" class="btn btn-danger btn-xs" title="Delete">D</a>
+                                            <a href="{{ route('keluarga.destroy', $item->id) }}"
+                                                class="btn btn-danger btn-xs mb-sm-1" data-confirm-delete="true"
+                                                title="Hapus Data">H</a>
                                         </td>
                                     </tr>
                                 @endforeach

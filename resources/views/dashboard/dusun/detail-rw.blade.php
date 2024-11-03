@@ -49,7 +49,9 @@
                                             <a href="{{ url('/desa/wilayah/rw/' . $item->id) }}"
                                                 class="btn btn-info btn-xs mb-sm-1" title="List">L</a>
                                             <a href="" class="btn btn-warning btn-xs mb-sm-1" title="Edit">E</a>
-                                            <a href="" class="btn btn-danger btn-xs" title="Delete">D</a>
+                                            <a href="{{ url('/desa/wilayah/' . $item->id) }}"
+                                                class="btn btn-danger btn-xs mb-sm-1" data-confirm-delete="true"
+                                                title="Hapus Data">H</a>
                                         </td>
                                     </tr>
                                 @endforeach

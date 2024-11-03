@@ -17,7 +17,8 @@
                                     <tbody>
                                         @foreach ($bantuans as $item)
                                             <tr>
-                                                <td>
+                                                <td
+                                                    class="{{ request()->segment(3) == $item->id ? 'bg-warning rounded-2 border-bottom-0' : '' }}">
                                                     <a href="{{ route('statistik.bantuan', $item->id) }}">
                                                         {{ $item->nama }}
                                                     </a>

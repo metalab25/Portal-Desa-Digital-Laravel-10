@@ -31,7 +31,6 @@ class Kelompok extends Model
         return $this->hasMany(KelompokAnggota::class);
     }
 
-
     public function kelompok_jabatan()
     {
         return $this->belongsTo(KelompokJabatan::class);

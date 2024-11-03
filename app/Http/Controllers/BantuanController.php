@@ -21,6 +21,10 @@ class BantuanController extends Controller
     {
         $bantuan = Bantuan::orderBy('nama')->paginate(8);
 
+        $title = 'Hapus Data Bantuan!';
+        $text = "Anda yakin inigin menghapus data ini ?";
+        confirmDelete($title, $text);
+
         return view('dashboard.bantuan.index', [
             'page'      => 'Program Bantuan',
             'bantuan'   => $bantuan
@@ -74,7 +78,10 @@ class BantuanController extends Controller
         $penduduk   = Penduduk::all();
         $penerima   = BantuanPenerima::where('bantuan_id', $id)->paginate(4);
 
-        // dd($penerima);
+        $title = 'Hapus Penerima Bantuan!';
+        $text = "Anda yakin inigin menghapus data ini ?";
+        confirmDelete($title, $text);
+
 
         return view('dashboard.bantuan.details', [
             'page'      => $bantuan->nama,

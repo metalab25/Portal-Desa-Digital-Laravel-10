@@ -23,6 +23,10 @@ class KelompokController extends Controller
         $penduduks          = Penduduk::orderBy('nama')->get();
         $kelompoks          = Kelompok::orderBy('nama')->withCount('anggota')->paginate(8);
 
+        $title = 'Hapus Data Kelompok!';
+        $text = "Anda yakin inigin menghapus data ini ?";
+        confirmDelete($title, $text);
+
         return view('dashboard.kelompok.index', [
             'page'      => 'Kelompok',
             'kategori'  => $kelompoks_kategori,

@@ -200,7 +200,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('klasifikasi-surat.index') }}"
+                                class="nav-link {{ request()->segment(2) == 'klasifikasi-surat' ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-tags"></i>
                                 <p>Klasifikasi Surat</p>
                             </a>

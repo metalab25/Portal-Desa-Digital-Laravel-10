@@ -2,20 +2,19 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class DatabaseSeeder extends Seeder
+class DatabaseDumpSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      */
     public function run(): void
     {
         // Path ke file SQL dump
-        $sqlPath = database_path('dump/dump.sql');
+        $sqlPath = database_path('dumps/dump.sql');
 
         // Baca file SQL
         $sql = file_get_contents($sqlPath);

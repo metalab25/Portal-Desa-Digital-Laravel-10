@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LoginController extends Controller
 {
@@ -28,7 +29,8 @@ class LoginController extends Controller
             return redirect()->intended('dashboard');
         }
 
-        return back()->with('loginError', 'Incorrect email or password');
+        Alert::error('Login Error', 'Username atau password salah');
+        return back();
     }
 
     public function logout(Request $request)

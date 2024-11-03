@@ -80,20 +80,20 @@
                                         </td>
                                         <td class="align-middle">
                                             @if ($item->bantuan_sasaran_id == 1)
-                                                {{ $item->penduduk->nama }}
+                                                {{ $item->penduduk->nama ?? 'Penduduk tidak tersedia' }}
                                             @elseif($item->bantuan_sasaran_id == 2)
-                                                {{ $item->keluarga->penduduk->nama }}
+                                                {{ $item->keluarga->penduduk->nama ?? 'Keluarga tidak tersedia' }}
                                             @elseif($item->bantuan_sasaran_id == 3)
-                                                {{ $item->kelompok->penduduk->nama }}
+                                                {{ $item->kelompok->penduduk->nama ?? 'Kelompok tidak tersedia' }}
                                             @endif
                                         </td>
                                         <td class="text-center align-middle">
                                             @if ($item->bantuan_sasaran_id == 1)
-                                                {{ $item->penduduk->nik }}
+                                                {{ $item->penduduk->nik ?? 'Penduduk tidak tersedia' }}
                                             @elseif($item->bantuan_sasaran_id == 2)
-                                                {{ $item->keluarga->no_kk }}
+                                                {{ $item->keluarga->no_kk ?? 'Keluarga tidak tersedia' }}
                                             @elseif($item->bantuan_sasaran_id == 3)
-                                                {{ $item->kelompok->nama }}
+                                                {{ $item->kelompok->nama ?? 'Kelompok tidak tersedia' }}
                                             @endif
                                         </td>
                                         <td class="align-middle">
@@ -112,13 +112,9 @@
                                                 class="btn btn-info btn-xs mb-sm-1" title="Detais">S</a>
                                             <a href="{{ route('penerima.edit', $item->id) }}"
                                                 class="btn btn-warning btn-xs mb-sm-1" title="Edit">E</a>
-                                            <form action="{{ route('penerima.destroy', $item->id) }}" method="POST"
-                                                class="d-inline">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-xs" title="Delete"
-                                                    onclick="return confirm('Apakah Anda yakin ingin menghapus data ini ?')">D</button>
-                                            </form>
+                                            <a href="{{ route('penerima.destroy', $item->id) }}"
+                                                class="btn btn-danger btn-xs mb-sm-1" data-confirm-delete="true"
+                                                title="Hapus Penerima">H</a>
                                         </td>
                                     </tr>
                                 @endforeach

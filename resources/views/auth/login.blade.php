@@ -25,9 +25,11 @@
         integrity="sha256-Qsx5lrStHZyR9REqhUF8iQt73X06c8LGIUPzpOhwRrI=" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{ '/assets/dashboard/css/adminlte.css' }}">
+    <link rel="stylesheet" href="{{ '/assets/dashboard/css/custom-style.css' }}">
 </head>
 
 <body class="login-page bg-body-secondary">
+    @include('sweetalert::alert')
     <div class="login-box">
         <div class="login-logo font-outfit">
             <a href="{{ url('/') }}">

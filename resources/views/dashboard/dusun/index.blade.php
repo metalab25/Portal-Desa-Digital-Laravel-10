@@ -57,13 +57,10 @@
                                                 class="btn btn-info btn-xs mb-sm-1" title="List">L</a>
                                             <a href="{{ route('wilayah.edit', $item->id) }}"
                                                 class="btn btn-warning btn-xs mb-sm-1" title="Edit">E</a>
-                                            <form action="{{ route('wilayah.destroy', $item->id) }}" method="POST"
-                                                class="d-inline">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-xs" title="Delete"
-                                                    onclick="return confirm('Apakah Anda yakin ingin menghapus data ini ?')">D</button>
-                                            </form>
+                                            <a href="{{ route('wilayah.destroy', $item->id) }}"
+                                                class="btn btn-danger btn-xs mb-sm-1" data-confirm-delete="true"
+                                                title="Hapus Data">H</a>
+
                                         </td>
                                     </tr>
                                 @endforeach

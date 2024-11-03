@@ -22,6 +22,10 @@ class KeluargaController extends Controller
         $dusuns = Dusun::orderBy('nama')->get();
         $keluarga = Keluarga::orderBy('no_kk')->withCount('anggota')->paginate(6);
 
+        $title = 'Hapus Data!';
+        $text = "Anda yakin inigin menghapus data ini ?";
+        confirmDelete($title, $text);
+
         return view('dashboard.keluarga.index', [
             'page'      =>  'Keluarga',
             'dusuns'    =>  $dusuns,

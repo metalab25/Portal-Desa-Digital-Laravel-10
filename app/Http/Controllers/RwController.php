@@ -57,6 +57,10 @@ class RwController extends Controller
         $dusun = Dusun::where('dusun_id', $rw->dusun_id);
         $rt = Rt::orderBy('nama')->where('rw_id', $id)->withCount('keluarga')->paginate(6);
 
+        $title = 'Hapus Data RT!';
+        $text = "Anda yakin inigin menghapus data ini ?";
+        confirmDelete($title, $text);
+
         return view('dashboard.dusun.detail-rt', [
             'page'  =>  $setting->sebutan_dusun . ' ' . $rw->dusun->nama . ' ' . 'RW' . ' ' . $rw->nama,
             'rw'    =>  $rw,

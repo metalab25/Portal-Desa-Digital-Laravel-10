@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header bg-warning">
-                <h1 class="modal-title fs-5 font-outfit" id="exampleModalLabel">Tambah {{ $setting->sebutan_dusun }}
+                <h1 class="modal-title fs-6 font-outfit" id="exampleModalLabel">Tambah {{ $setting->sebutan_dusun }}
                 </h1>
             </div>
             <form action="{{ url('/desa/wilayah') }}" method="post">

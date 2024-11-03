@@ -23,7 +23,11 @@ class PamongController extends Controller
     public function index()
     {
         $setting    = Pengaturan::first();
-        $pamongs    = Pamong::paginate(8);
+        $pamongs    = Pamong::paginate(4);
+
+        $title = 'Hapus Data Pemerintah ' . $setting->sebutan_desa . '!';
+        $text = "Anda yakin inigin menghapus data ini ?";
+        confirmDelete($title, $text);
 
         return view('dashboard.pamong.index', [
             'page'      =>  'Pemerintah ' . $setting->sebutan_desa,

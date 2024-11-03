@@ -32,12 +32,12 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
 
         // Desa Data
-        // $desa = Config::first();
-        // View::share('desa', $desa);
+        $desa = Config::first();
+        View::share('desa', $desa);
 
         // Setting Data
-        // $setting = Pengaturan::first();
-        // View::share('setting', $setting);
+        $setting = Pengaturan::first();
+        View::share('setting', $setting);
 
         // Tanggal Hari ini
         $tanggalHariIni = Carbon::now();

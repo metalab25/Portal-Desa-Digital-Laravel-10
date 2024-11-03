@@ -87,13 +87,9 @@
                                                         class="btn btn-success btn-xs mb-sm-1" title="Show">L</a>
                                                     <a href="" class="btn btn-warning btn-xs mb-sm-1"
                                                         title="Edit">E</a>
-                                                    <form action="{{ route('kelompok.destroy', $item->id) }}"
-                                                        method="POST" class="d-inline">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger btn-xs" title="Delete"
-                                                            onclick="return confirm('Apakah Anda yakin ingin menghapus data ini ?')">D</button>
-                                                    </form>
+                                                    <a href="{{ route('kelompok.destroy', $item->id) }}"
+                                                        class="btn btn-danger btn-xs mb-sm-1" data-confirm-delete="true"
+                                                        title="Hapus Data">H</a>
                                                 </td>
                                             </tr>
                                         @endforeach

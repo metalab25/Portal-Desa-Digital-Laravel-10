@@ -33,6 +33,10 @@ class DusunController extends Controller
             }
         ])->paginate(8);
 
+        $title = 'Hapus Data ' . $setting->sebutan_dusun . '!';
+        $text = "Anda yakin inigin menghapus data ini ?";
+        confirmDelete($title, $text);
+
         return view('dashboard.dusun.index', [
             'page'  => $setting->sebutan_dusun,
             'dusun' => $dusun
@@ -70,6 +74,11 @@ class DusunController extends Controller
         $setting = Pengaturan::first();
         $dusun = Dusun::findOrFail($id);
         $rw = Rw::orderBy('nama')->where('dusun_id', $id)->withCount('rt')->withCount('keluarga')->paginate(6);
+
+        $title = 'Hapus Data RW!';
+        $text = "Anda yakin inigin menghapus data ini ?";
+        confirmDelete($title, $text);
+
 
         return view('dashboard.dusun.detail-rw', [
             'page'  =>  $setting->sebutan_dusun . ' ' . $dusun->nama,

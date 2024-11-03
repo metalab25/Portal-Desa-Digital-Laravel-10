@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="alert alert-danger rounded-3 mb-0">
-                        Pilih statistik kependudukan disebelah kiri untuk melihat data statistik penduduk
+                        Pilih program bantuan disebelah kiri untuk melihat data statistik bantuan
                     </div>
                 </div>
             </div>
