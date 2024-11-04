@@ -18,10 +18,10 @@
                                     <input type="hidden" name="oldIcon" value="{{ $pengaturan->icon }}">
                                     @if ($pengaturan->icon)
                                         <img src="{{ asset('storage/' . $pengaturan->icon) }}"
-                                            class="icon-preview rounded-4 img-fluid d-block mx-auto mb-3">
+                                            class="icon-preview rounded-3 img-fluid d-block mx-auto mb-3">
                                     @else
                                         <img src="{{ asset('/assets/dashboard/img/no-picture.webp') }}"
-                                            class="icon-preview rounded-4 img-fluid d-block mx-auto mb-3">
+                                            class="icon-preview rounded-3 img-fluid d-block mx-auto mb-3">
                                     @endif
                                 </div>
                                 <div class="mb-0">

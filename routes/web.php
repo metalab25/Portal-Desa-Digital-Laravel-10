@@ -17,6 +17,8 @@ use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\PengaturanController;
+use App\Http\Controllers\SuratMasukController;
+use App\Http\Controllers\SuratKeluarController;
 use App\Http\Controllers\BantuanPenerimaController;
 use App\Http\Controllers\KelompokAnggotaController;
 use App\Http\Controllers\KelompokKategoriController;
@@ -111,3 +113,10 @@ Route::get('/statistik/kependudukan', [StatistikController::class, 'index'])->na
 
 // Klasifikasi Surat
 Route::resource('/administrasi/klasifikasi-surat', KlasifikasiSuratController::class)->middleware('auth');
+
+// Surat Keluar
+Route::get('/administrasi/surat-keluar/cetak', [SuratKeluarController::class, 'cetak'])->name('surat-keluar.cetak')->middleware('auth');
+Route::resource('/administrasi/surat-keluar', SuratKeluarController::class)->middleware('auth');
+
+// Surat Masuk
+Route::resource('/administrasi/surat-masuk', SuratMasukController::class)->middleware('auth');

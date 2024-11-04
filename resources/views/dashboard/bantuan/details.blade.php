@@ -3,7 +3,7 @@
 @section('content')
     <div class="app-content">
         <div class="container-fluid">
-            <div class="card rounded-4 shadow">
+            <div class="card rounded-3 shadow">
                 <div class="card-header">
                     <div class="float-end float-end-sm-none">
                         <a href="{{ route('bantuan.index') }}" class="btn btn-danger btn-block btn-sm mb-sm-1">Daftar Program

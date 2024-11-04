@@ -65,10 +65,10 @@
                                     <input type="hidden" name="oldFoto" value="{{ $penduduk->foto }}">
                                     @if ($penduduk->foto)
                                         <img src="{{ asset('storage/' . $penduduk->foto) }}"
-                                            class="foto-preview rounded-4 img-fluid d-block mx-auto mb-3">
+                                            class="foto-preview rounded-3 img-fluid d-block mx-auto mb-3">
                                     @else
                                         <img src="{{ asset('assets//dashboard/img/avatar5.png') }}"
-                                            class="foto-preview rounded-4 img-fluid d-block mx-auto mb-3">
+                                            class="foto-preview rounded-3 img-fluid d-block mx-auto mb-3">
                                     @endif
                                 </div>
                                 <div class="mb-0">

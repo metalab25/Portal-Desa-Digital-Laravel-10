@@ -16,7 +16,7 @@
                             <div class="card-body">
                                 <div class="d-flex justify-content-center">
                                     <img src="{{ asset('assets/dashboard/img/no-picture.webp') }}"
-                                        class="foto-preview rounded-4 img-fluid d-block mx-auto mb-2">
+                                        class="foto-preview rounded-3 img-fluid d-block mx-auto mb-2">
                                 </div>
                                 <div class="mb-0">
                                     <p class="text-center text-xs text-danger mb-2">Maksimal 2MB dengan ukuran 800px x 450px

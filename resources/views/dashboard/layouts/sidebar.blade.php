@@ -170,17 +170,20 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('surat-masuk.index') }}"
+                                class="nav-link {{ request()->segment(2) == 'surat-masuk' ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-file-earmark-arrow-down"></i>
                                 <p>Surat Masuk</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('surat-keluar.index') }}"
+                                class="nav-link {{ request()->segment(2) == 'surat-keluar' ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-file-earmark-arrow-up"></i>
                                 <p>Surat Keluar</p>
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a href="#" class="nav-link ">
                                 <i class="nav-icon bi bi-award"></i>

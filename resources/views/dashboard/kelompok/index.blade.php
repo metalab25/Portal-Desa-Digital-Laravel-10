@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-md-9">
-                    <div class="card rounded-4 shadow">
+                    <div class="card rounded-3 shadow">
                         <div class="card-header">
                             <button type="button" class="btn btn-primary btn-block btn-sm float-end  mb-0"
                                 data-bs-toggle="modal" data-bs-target="#modalAddKelompok">

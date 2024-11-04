@@ -62,7 +62,7 @@
                             <div class="card-body pt-2">
                                 <div class="d-flex justify-content-center">
                                     <img src="{{ asset('assets/dashboard/img/avatar5.png') }}"
-                                        class="foto-preview rounded-4 img-fluid d-block mx-auto my-2">
+                                        class="foto-preview rounded-3 img-fluid d-block mx-auto my-2">
                                 </div>
                                 <div class="mb-0">
                                     <p class="text-center text-xs text-danger mb-2">Maksimal 2MB dengan ukuran 400px x 600px

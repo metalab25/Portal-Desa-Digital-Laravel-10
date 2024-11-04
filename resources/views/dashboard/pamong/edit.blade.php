@@ -19,10 +19,10 @@
                                     <input type="hidden" name="oldFoto" value="{{ $pamong->foto }}">
                                     @if ($pamong->foto)
                                         <img src="{{ asset('storage/' . $pamong->foto) }}"
-                                            class="foto-preview rounded-4 img-fluid d-block mx-auto mb-3">
+                                            class="foto-preview rounded-3 img-fluid d-block mx-auto mb-3">
                                     @else
                                         <img src="{{ asset('/assets/dashboard/img/no-picture.webp') }}"
-                                            class="foto-preview rounded-4 img-fluid d-block mx-auto mb-3">
+                                            class="foto-preview rounded-3 img-fluid d-block mx-auto mb-3">
                                     @endif
                                 </div>
                                 <div class="mb-0">

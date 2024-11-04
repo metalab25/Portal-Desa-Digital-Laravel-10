@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <div class="card rounded-4 shadow">
+                        <div class="card rounded-3 shadow">
                             <div class="card-header">
                                 <a href="{{ route('statistik.bantuan.cetak', $program->id) }}" target="_blank"
                                     class="btn btn-success btn-block btn-sm float-end  mb-0">

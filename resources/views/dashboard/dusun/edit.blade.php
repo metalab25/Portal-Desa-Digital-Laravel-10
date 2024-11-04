@@ -3,7 +3,7 @@
 @section('content')
     <div class="app-content">
         <div class="container-fluid">
-            <div class="card rounded-4 shadow">
+            <div class="card rounded-3 shadow">
                 <div class="card-header p-3 py-2">
                     <div class="pt-1">
                         <p class="text-sm mb-0 text-capitalize font-weight-bold">Edit Data {{ $setting->sebutan_dusun }}</p>
