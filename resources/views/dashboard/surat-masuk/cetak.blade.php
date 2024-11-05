@@ -23,16 +23,16 @@
     <p class="text-center text-xs mt-0">
         {{ $setting->sebutan_kecamatan . ' ' . $desa->nama_kecamatan . ', ' . $setting->sebutan_kabupaten . ' ' . $desa->nama_kabupaten }}
     </p>
-    <h4 class="text-center text-bold my-3">Agenda Surat Keluar</h4>
+    <h4 class="text-center text-bold my-3">Agenda Surat Masuk</h4>
     <button onclick="window.print()" class="no-print float-end">Cetak Halaman</button>
     <table class="table table-bordered full-w">
         <thead>
             <tr>
-                <th class="text-center align-middle" style="padding: 0.1rem 0.25rem">Nomor Urut</th>
-                <th class="text-center align-middle" style="padding: 0.1rem 0.25rem">Nomor Surat</th>
-                <th class="text-center align-middle" style="padding: 0.1rem 0.25rem">Tanggal Surat</th>
-                <th class="text-center align-middle" style="padding: 0.1rem 0.25rem">Ditujukan Kepada</th>
-                <th class="text-center align-middle" style="padding: 0.1rem 0.25rem">Perihal/Isian Singkat</th>
+                <th class="text-center align-middle" style="padding:0.25rem">Nomor Urut</th>
+                <th class="text-center align-middle" style="padding:0.25rem">Nomor Surat</th>
+                <th class="text-center align-middle" style="padding:0.25rem">Tanggal Surat</th>
+                <th class="text-center align-middle" style="padding:0.25rem">Pengirim</th>
+                <th class="text-center align-middle" style="padding:0.25rem">Perihal/Isian Singkat</th>
             </tr>
         </thead>
         <tbody>
@@ -47,7 +47,7 @@
                     <td class="text-center align-middle" style="padding: 0.1rem 0.25rem">
                         {{ tanggal_indonesia($item->tanggal_surat, false) }}
                     </td>
-                    <td class="text-center align-middle" style="padding: 0.1rem 0.25rem">{{ $item->tujuan }}</td>
+                    <td class="text-center align-middle" style="padding: 0.1rem 0.25rem">{{ $item->pengirim }}</td>
                     <td class="text-center align-middle" style="padding: 0.1rem 0.25rem">{{ $item->perihal }}</td>
                 </tr>
             @endforeach
@@ -67,13 +67,15 @@
             <td style="border: 0 !important"></td>
         </tr>
         <tr>
-            <td class="text-center" style="border: 0 !important"></td>
-            <td class="text-center" style="border: 0 !important">
+            <td class="text-center" style="border: 0 !important;padding:0.1rem 0.25rem"></td>
+            <td class="text-center" style="border: 0 !important;padding:0.1rem 0.25rem">
                 {{ $desa->nama_desa . ', ' . tanggal_indonesia($tanggal, false) }}</td>
         </tr>
         <tr>
-            <td class="text-center" style="border: 0 !important"></td>
-            <td class="text-center" style="border: 0 !important">{{ $setting->sebutan_kepala_desa }}</td>
+            <td class="text-center" style="border: 0 !important;padding:0.1rem 0.25rem"></td>
+            <td class="text-center" style="border: 0 !important;padding:0.1rem 0.25rem">
+                {{ $setting->sebutan_kepala_desa }}
+            </td>
         </tr>
         <tr>
             <td style="border: 0 !important"></td>
@@ -92,7 +94,7 @@
             <td class="text-center" style="border: 0 !important">
                 <u><b>{{ $desa->nama_kepala_desa }}</b></u>
                 <br>
-                NIP : {{ $desa->nip_kepa }}
+                NIP : {{ $desa->nip_kepala_desa }}
             </td>
         </tr>
     </table>

@@ -92,7 +92,7 @@
             <td class="text-center" style="border: 0 !important">
                 <u><b>{{ $desa->nama_kepala_desa }}</b></u>
                 <br>
-                NIP : {{ $desa->nip_kepa }}
+                NIP : {{ $desa->nip_kepala_desa }}
             </td>
         </tr>
     </table>

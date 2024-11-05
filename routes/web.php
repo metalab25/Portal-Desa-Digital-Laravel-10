@@ -119,4 +119,5 @@ Route::get('/administrasi/surat-keluar/cetak', [SuratKeluarController::class, 'c
 Route::resource('/administrasi/surat-keluar', SuratKeluarController::class)->middleware('auth');
 
 // Surat Masuk
+Route::get('/administrasi/surat-masuk/cetak', [SuratMasukController::class, 'cetak'])->name('surat-masuk.cetak')->middleware('auth');
 Route::resource('/administrasi/surat-masuk', SuratMasukController::class)->middleware('auth');

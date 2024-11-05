@@ -69,8 +69,6 @@ class SuratMasukController extends Controller
 
         $validatedData['pamong_id'] = json_encode($request->pamong_id);
 
-        // dd($validatedData);
-
         SuratMasuk::create($validatedData);
 
         Alert::success('Success', 'Data surat masuk berhasil ditambahkan');
@@ -140,6 +138,17 @@ class SuratMasukController extends Controller
 
         Alert::success('Success', 'Data surat masuk berhasil diperbaharui');
         return redirect()->route('surat-masuk.index');
+    }
+
+    // Cetak Data
+    public function cetak()
+    {
+        $surat    = SuratMasuk::orderBy('nomor_urut')->get();
+
+        return view('dashboard.surat-masuk.cetak', [
+            'page'  => 'Cetak Data Surat Masuk',
+            'surat' => $surat
+        ]);
     }
 
     /**
