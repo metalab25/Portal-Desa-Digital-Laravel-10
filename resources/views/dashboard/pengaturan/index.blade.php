@@ -234,16 +234,20 @@
                                     <div class="col-md-6">
                                         <select class="form-control form-select @error('zona_waktu') is-invalid @enderror"
                                             id="zona_waktu" name="zona_waktu">
-                                            <option value="1" {{ $pengaturan->zona_waktu == 1 ? 'selected' : '' }}>
+                                            <option value="Asia/Jakarta"
+                                                {{ $pengaturan->zona_waktu == 'Asia/Jakarta' ? 'selected' : '' }}>
                                                 Asia/Jakarta
                                             </option>
-                                            <option value="2" {{ $pengaturan->zona_waktu == 2 ? 'selected' : '' }}>
-                                                Asia/Pontianak
-                                            </option>
-                                            <option value="3" {{ $pengaturan->zona_waktu == 3 ? 'selected' : '' }}>
+                                            <option value="Asia/Makassar"
+                                                {{ $pengaturan->zona_waktu == 'Asia/Makassar' ? 'selected' : '' }}>
                                                 Asia/Makassar
                                             </option>
-                                            <option value="4" {{ $pengaturan->zona_waktu == 4 ? 'selected' : '' }}>
+                                            <option value="Asia/Pontianak"
+                                                {{ $pengaturan->zona_waktu == 'Asia/Pontianak' ? 'selected' : '' }}>
+                                                Asia/Pontianak
+                                            </option>
+                                            <option value="Asia/Jayapura"
+                                                {{ $pengaturan->zona_waktu == 'Asia/Jayapura' ? 'selected' : '' }}>
                                                 Asia/Jayapura
                                             </option>
                                         </select>

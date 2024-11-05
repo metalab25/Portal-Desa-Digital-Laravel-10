@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('singkatan_kabupaten')->nullable();
             $table->string('singkatan_dusun')->nullable();
             $table->string('format_nomor_surat')->nullable();
-            $table->boolean('zona_waktu')->default('1');
+            $table->string('zona_waktu')->default('Asia/Jakarta');
             $table->string('title_web')->nullable();
             $table->string('icon')->nullable();
             $table->timestamps();
