@@ -23,6 +23,7 @@ use App\Http\Controllers\BantuanPenerimaController;
 use App\Http\Controllers\KelompokAnggotaController;
 use App\Http\Controllers\KelompokKategoriController;
 use App\Http\Controllers\KlasifikasiSuratController;
+use App\Http\Controllers\PeraturanController;
 use App\Http\Controllers\SuratKeputusanController;
 
 /*
@@ -126,3 +127,7 @@ Route::resource('/administrasi/surat-masuk', SuratMasukController::class)->middl
 // Surat Keputusan
 Route::get('/administrasi/surat-keputusan/cetak', [SuratKeputusanController::class, 'cetak'])->name('surat-keputusan.cetak')->middleware('auth');
 Route::resource('/administrasi/surat-keputusan', SuratKeputusanController::class)->middleware('auth');
+
+// Peraturan
+Route::get('/administrasi/peraturan/cetak', [PeraturanController::class, 'cetak'])->name('peraturan.cetak')->middleware('auth');
+Route::resource('/administrasi/peraturan', PeraturanController::class)->middleware('auth');

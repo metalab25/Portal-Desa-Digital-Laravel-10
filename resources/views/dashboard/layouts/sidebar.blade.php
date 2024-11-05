@@ -192,7 +192,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('peraturan.index') }}"
+                                class="nav-link {{ request()->segment(2) == 'peraturan' ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-file-earmark-ruled"></i>
                                 <p>Peraturan {{ $setting->sebutan_desa }}</p>
                             </a>
