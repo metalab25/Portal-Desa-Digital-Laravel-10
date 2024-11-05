@@ -115,6 +115,17 @@ class SuratKeputusanController extends Controller
         return redirect()->route('surat-keputusan.index');
     }
 
+    // Cetak Data
+    public function cetak()
+    {
+        $surat = SuratKeputusan::orderBy('nama')->paginate(8);
+
+        return view('dashboard.surat-keputusan.cetak', [
+            'page'  => 'Cetak Data Surat Keputusan',
+            'surat' => $surat
+        ]);
+    }
+
     /**
      * Remove the specified resource from storage.
      */

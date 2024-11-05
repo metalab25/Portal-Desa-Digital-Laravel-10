@@ -9,7 +9,8 @@
                         <div class="col-md-6"></div>
                         <div class="col-md-6">
                             <div class="float-end">
-                                <a href="" target="_blank" class="btn btn-success btn-block btn-sm mb-sm-1">Cetak
+                                <a href="{{ route('surat-keputusan.cetak') }}" target="_blank"
+                                    class="btn btn-success btn-block btn-sm mb-sm-1">Cetak
                                     Data</a>
                                 <a href="{{ route('surat-keputusan.create') }}" class="btn btn-primary btn-block btn-sm">
                                     Tambah Surat Keputusan
