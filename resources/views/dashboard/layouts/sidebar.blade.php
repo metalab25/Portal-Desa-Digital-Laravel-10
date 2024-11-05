@@ -185,7 +185,8 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link ">
+                            <a href="{{ route('surat-keputusan.index') }}"
+                                class="nav-link {{ request()->segment(2) == 'surat-keputusan' ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-award"></i>
                                 <p>Surat Keputusan</p>
                             </a>
