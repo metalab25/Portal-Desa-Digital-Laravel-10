@@ -12,10 +12,10 @@ class IdmController extends Controller
     public function index()
     {
         $data = Idm::first();
-
+        $data = json_decode($data['data'], true)['mapData']['ROW'];
         return view('dashboard.idm.index', [
             'page'  => 'Index Desa Membangun',
-            'data'   => json_decode($data, true)
+            'data'   => $data
         ]);
     }
 
