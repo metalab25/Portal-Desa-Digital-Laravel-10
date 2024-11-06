@@ -89,9 +89,9 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('statistik.idm') }}"
+                            <a href="{{ route('idm.index') }}"
                                 class="nav-link {{ request()->segment(2) == 'idm' ? 'active' : '' }}">
-                                <i class="nav-icon bi bi-bar-chart-fill"></i>
+                                <i class="nav-icon bi bi-pie-chart-fill"></i>
                                 <p>Index Desa Membangun</p>
                             </a>
                         </li>
