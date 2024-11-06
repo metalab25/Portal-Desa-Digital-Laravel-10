@@ -20,6 +20,7 @@ use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\SuratMasukController;
 use App\Http\Controllers\SuratKeluarController;
 use App\Http\Controllers\BantuanPenerimaController;
+use App\Http\Controllers\IdmController;
 use App\Http\Controllers\KelompokAnggotaController;
 use App\Http\Controllers\KelompokKategoriController;
 use App\Http\Controllers\KlasifikasiSuratController;
@@ -112,6 +113,10 @@ Route::get('/statistik/kependudukan/cacat', [StatistikController::class, 'cacat'
 Route::get('/statistik/kependudukan/sakit-menahun', [StatistikController::class, 'sakitMenahun'])->name('statistik.sakit-menahun')->middleware('auth');
 Route::get('/statistik/kependudukan/cara-kb', [StatistikController::class, 'caraKB'])->name('statistik.cara-kb')->middleware('auth');
 Route::get('/statistik/kependudukan', [StatistikController::class, 'index'])->name('statistik.index')->middleware('auth');
+
+// Indeks Desa Membangun
+Route::get('/statistik/idm', [IdmController::class, 'index'])->name('idm.index')->middleware('auth');
+Route::get('statistik/idm/fetch', [IdmController::class, 'fetchAndStoreData'])->name('fetch.idm')->middleware('auth');
 
 // Klasifikasi Surat
 Route::resource('/administrasi/klasifikasi-surat', KlasifikasiSuratController::class)->middleware('auth');

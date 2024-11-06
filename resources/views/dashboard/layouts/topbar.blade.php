@@ -6,9 +6,6 @@
                     <i class="bi bi-list"></i> </a>
             </li>
             <li class="nav-item d-none d-md-block">
-                <a href="#" class="nav-link">{{ config('app.name') }}</a>
-            </li>
-            <li class="nav-item d-none d-md-block">
                 <a href="#" class="nav-link">{{ $setting->sebutan_desa . ' ' . $desa->nama_desa }}</a>
             </li>
         </ul>

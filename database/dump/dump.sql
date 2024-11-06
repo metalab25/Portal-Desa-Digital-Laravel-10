@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 05, 2024 at 04:47 AM
+-- Generation Time: Nov 06, 2024 at 03:53 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.2.20
 
@@ -649,17 +649,17 @@ INSERT INTO
 VALUES (
         1,
         'Ampenan Tengah',
-        '1005',
+        '2002',
         'Bahrudin',
         '112 223 3344 555',
         '081234657866',
         '83112',
-        'Ampenan',
-        '01',
+        'Sakra Barat',
+        '19',
         'Suryadi',
         '19790819 200701 2 016',
-        'Mataram',
-        '71',
+        'Lombok Timur',
+        '03',
         52,
         'logos/odrEL5ufGT38akhfGRzJfzSzYrnjWVCTrburGAzY.png',
         NULL,
@@ -674,7 +674,7 @@ VALUES (
         'https://www.songkel.desa.id',
         NULL,
         '2024-10-26 16:32:06',
-        '2024-11-03 03:44:37'
+        '2024-11-05 17:20:57'
     );
 
 -- --------------------------------------------------------
@@ -926,6 +926,43 @@ VALUES (
         'Lainnya',
         '2024-10-26 16:32:06',
         '2024-10-26 16:32:06'
+    );
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `idms`
+--
+
+CREATE TABLE `idms` (
+    `id` bigint UNSIGNED NOT NULL,
+    `kode_desa` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `tahun` int NOT NULL,
+    `data` json DEFAULT NULL,
+    `created_at` timestamp NULL DEFAULT NULL,
+    `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `idms`
+--
+
+INSERT INTO
+    `idms` (
+        `id`,
+        `kode_desa`,
+        `tahun`,
+        `data`,
+        `created_at`,
+        `updated_at`
+    )
+VALUES (
+        1,
+        '5203192002',
+        2024,
+        '{\"error\": false, \"status\": 200, \"mapData\": {\"ROW\": [{\"NO\": 1, \"CSR\": null, \"KAB\": \"Dinkes, PU\", \"DESA\": null, \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 10, \"INDIKATOR\": \"Skor Akses Sarkes\", \"KETERANGAN\": \"Waktu tempuh dari ≤ 30  Menit\"}, {\"NO\": 2, \"CSR\": null, \"KAB\": \"DINKES\", \"DESA\": null, \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 11, \"INDIKATOR\": \"Skor Dokter\", \"KETERANGAN\": \"Jumlah dokter ≥ 1 orang\"}, {\"NO\": 3, \"CSR\": null, \"KAB\": \"DINKES\", \"DESA\": null, \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 12, \"INDIKATOR\": \"Skor Bidan \", \"KETERANGAN\": \"Jumlah bidan ≥ 1 orang\"}, {\"NO\": 4, \"CSR\": null, \"KAB\": \"DINKES\", \"DESA\": null, \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 13, \"INDIKATOR\": \"Skor Nakes Lain\", \"KETERANGAN\": \"Jumlah tenaga kesehatan lainnya ≥ 5 orang\"}, {\"NO\": 5, \"CSR\": null, \"KAB\": \"DINKES\", \"DESA\": null, \"PROV\": null, \"SKOR\": 3, \"NILAI\": \"0.00380952\", \"PUSAT\": null, \"LAINNYA\": \"BPJS\", \"KEGIATAN\": \"Fasilitasi kepesertaan BPJS warga Desa hingga > 75%\", \"ROW_CELL\": 14, \"INDIKATOR\": \"Skor Tingkat Kepesertaan BPJS\", \"KETERANGAN\": \"Jumlah peserta BPJS/jumlah penduduk antara 0,26 s.d 0,5\"}, {\"NO\": 6, \"CSR\": null, \"KAB\": \"DINKES\", \"DESA\": null, \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 15, \"INDIKATOR\": \"Skor Akses Poskesdes\", \"KETERANGAN\": \"Jarak tempuh menuju Poskesdes = 500 Meter\"}, {\"NO\": 7, \"CSR\": null, \"KAB\": \"DPMD, DINKES\", \"DESA\": \"DD\", \"PROV\": \"DPMD\", \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 16, \"INDIKATOR\": \"Skor Aktivitas Posyandu\", \"KETERANGAN\": \"Jumlah Posyandu aktif 1 bulan sekali/ Jumlah Posyandu > 0,75\"}, {\"NO\": 8, \"CSR\": null, \"KAB\": \"DISDIK, PU\", \"DESA\": null, \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 17, \"INDIKATOR\": \"Skor Akses SD/MI\", \"KETERANGAN\": \"Jarak tempuh menuju SD atau MI = 3000 Meter\"}, {\"NO\": 9, \"CSR\": null, \"KAB\": \"DISDIK, PU\", \"DESA\": null, \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 18, \"INDIKATOR\": \"Skor Akses SMP/MTS\", \"KETERANGAN\": \"Jarak tempuh menuju SMP atau MTs ≤ 6000 Meter\"}, {\"NO\": 10, \"CSR\": null, \"KAB\": \"PU\", \"DESA\": null, \"PROV\": \"DISDIK\", \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 19, \"INDIKATOR\": \"Skor Akses SMA/SMK\", \"KETERANGAN\": \"Jarak tempuh menuju SMU atau SMK ≤ 6000 Meter\"}, {\"NO\": 11, \"CSR\": null, \"KAB\": \"DISDIK\", \"DESA\": \"DD\", \"PROV\": \"DISDIK\", \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 20, \"INDIKATOR\": \"Skor Ketersediaan PAUD\", \"KETERANGAN\": \"Jumlah PAUD ≥ 1 \"}, {\"NO\": 12, \"CSR\": null, \"KAB\": \"DISDIK\", \"DESA\": null, \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 21, \"INDIKATOR\": \"Skor Ketersediaan PKBM/ Paket ABC\", \"KETERANGAN\": \"Jumlah PKBM atau Paket ABC ≥ 1 \"}, {\"NO\": 13, \"CSR\": \"CSR\", \"KAB\": null, \"DESA\": null, \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": \"Swasta, Perorangan\", \"KEGIATAN\": \"-\", \"ROW_CELL\": 22, \"INDIKATOR\": \"Skor Ketersediaan Kursus\", \"KETERANGAN\": \"Jumlah Pusat Keterampilan atau Kursus ≥ 1 \"}, {\"NO\": 14, \"CSR\": \"CSR\", \"KAB\": \"Dinas Perpus\", \"DESA\": \"DD\", \"PROV\": \"Dinas Perpus\", \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": \"Kemenperpus Arsip\", \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 23, \"INDIKATOR\": \"Skor Ketersediaan Taman Baca/ Perpus Desa\", \"KETERANGAN\": \"Taman Bacaan Masyarakat atau perpustakaan Desa tersedia \"}, {\"NO\": 15, \"CSR\": null, \"KAB\": null, \"DESA\": \"Desa\", \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 24, \"INDIKATOR\": \"Skor Kebiasaan Goryong\", \"KETERANGAN\": \"Terdapat Kebiasaan Gotong Royong\"}, {\"NO\": 16, \"CSR\": null, \"KAB\": null, \"DESA\": \"Desa\", \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 25, \"INDIKATOR\": \"Skor Frekuensi Goryong\", \"KETERANGAN\": \"Frekuensi Gotong Royong > 2\"}, {\"NO\": 17, \"CSR\": null, \"KAB\": \"PU\", \"DESA\": \"DD\", \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 26, \"INDIKATOR\": \"Skor Ketersediaan Ruang Publik\", \"KETERANGAN\": \"Ruang Publik terdapat didesa\"}, {\"NO\": 18, \"CSR\": null, \"KAB\": \"DISPORA\", \"DESA\": \"Karang Taruna\", \"PROV\": \"DISPORA\", \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 27, \"INDIKATOR\": \"Skor Kelompok OR\", \"KETERANGAN\": \"Jumlah kelompok kegiatan olahraga > 7\"}, {\"NO\": 19, \"CSR\": \"CSR\", \"KAB\": \"DISPORA\", \"DESA\": \"DD\", \"PROV\": \"DISPORA\", \"SKOR\": 2, \"NILAI\": \"0.00571429\", \"PUSAT\": \"Kemepora/ Kemendes\", \"LAINNYA\": \"Perorangan\", \"KEGIATAN\": \"Pembangunan Min 6 Lap Olahraga\", \"ROW_CELL\": 28, \"INDIKATOR\": \"Skor Kegiatan OR\", \"KETERANGAN\": \"Jumlah kegiatan olahraga 2 s.d 3\"}, {\"NO\": 20, \"CSR\": null, \"KAB\": null, \"DESA\": \"Desa\", \"PROV\": null, \"SKOR\": 1, \"NILAI\": \"0.00761905\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"Pendataan Jenis Agama Penduduk Desa\", \"ROW_CELL\": 29, \"INDIKATOR\": \"Skor Keragaman Agama\", \"KETERANGAN\": \"Jumlah Jenis Agama di Desa terdapat 1\"}, {\"NO\": 21, \"CSR\": null, \"KAB\": null, \"DESA\": \"Desa\", \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 30, \"INDIKATOR\": \"Skor Keragaman Bahasa\", \"KETERANGAN\": \"Jumlah Bahasa yang digunakan sehari-hari > 1\"}, {\"NO\": 22, \"CSR\": null, \"KAB\": null, \"DESA\": \"Desa\", \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 31, \"INDIKATOR\": \"Skor Keragaman Komunikasi\", \"KETERANGAN\": \"Warga Desa terdiri dari Suku > 1\"}, {\"NO\": 23, \"CSR\": null, \"KAB\": null, \"DESA\": \"DD\", \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 32, \"INDIKATOR\": \"Skor Poskamling\", \"KETERANGAN\": \"Terdapat Pos Keamanan  di Desa\"}, {\"NO\": 24, \"CSR\": null, \"KAB\": null, \"DESA\": \"Desa\", \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 33, \"INDIKATOR\": \"Skor Siskamling\", \"KETERANGAN\": \"Terdapat Sistem Keamanan Lingkungan warga di Desa\"}, {\"NO\": 25, \"CSR\": null, \"KAB\": \"Kesbangpol\", \"DESA\": null, \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 34, \"INDIKATOR\": \"Skor Konflik\", \"KETERANGAN\": \"Tidak terdapat atau tidak ada Konflik di Desa\"}, {\"NO\": 26, \"CSR\": null, \"KAB\": \"Dinsos\", \"DESA\": null, \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 35, \"INDIKATOR\": \"Skor PMKS\", \"KETERANGAN\": \"Jumlah PMKS  tidak ada atau 0 \"}, {\"NO\": 27, \"CSR\": null, \"KAB\": null, \"DESA\": null, \"PROV\": \"DIKNAS\", \"SKOR\": 3, \"NILAI\": \"0.00380952\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"Penanganan SLB\", \"ROW_CELL\": 36, \"INDIKATOR\": \"Skor SLB\", \"KETERANGAN\": \"Jumlah Skor SLB antara 4 s.d 5\"}, {\"NO\": 28, \"CSR\": \"CSR\", \"KAB\": null, \"DESA\": \"DD\", \"PROV\": \"ESDM\", \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": \"ESDM\", \"LAINNYA\": \"Perorangan\", \"KEGIATAN\": \"-\", \"ROW_CELL\": 37, \"INDIKATOR\": \"Skor Akses Listrik\", \"KETERANGAN\": \"(Jumlah Keluarga Memakai listrik + non Listrik/Jumlah keluarga memakai listrik) ≥ 0,9 )\"}, {\"NO\": 29, \"CSR\": null, \"KAB\": \"Diskominfo\", \"DESA\": null, \"PROV\": \"Diskominfo\", \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": \"Kominfo\", \"LAINNYA\": \"Operator Selular\", \"KEGIATAN\": \"-\", \"ROW_CELL\": 38, \"INDIKATOR\": \"Skor Sinyal Tlp\", \"KETERANGAN\": \"Sinyal telepon seluler di Desa Kuat\"}, {\"NO\": 30, \"CSR\": \"CSR\", \"KAB\": null, \"DESA\": \"Desa\", \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": \"Kominfo/ Kemendes\", \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 39, \"INDIKATOR\": \"Skor Internet Kantor Desa\", \"KETERANGAN\": \"Terdapat fasilitas internet di kantor Desa \"}, {\"NO\": 31, \"CSR\": null, \"KAB\": \"Diskominfo\", \"DESA\": null, \"PROV\": \"Diskominfo\", \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": \"Kominfo\", \"LAINNYA\": \"Operator Selular\", \"KEGIATAN\": \"-\", \"ROW_CELL\": 40, \"INDIKATOR\": \"Skor Akses Internet Warga\", \"KETERANGAN\": \"Terdapat Akses internet warga di Desa\"}, {\"NO\": 32, \"CSR\": \"CSR\", \"KAB\": \"DINSOS,DINKES\", \"DESA\": null, \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": \"Perorangan\", \"KEGIATAN\": \"-\", \"ROW_CELL\": 41, \"INDIKATOR\": \"Skor Akses Jamban\", \"KETERANGAN\": \"Warga Desa BAB di Jamban Sendiri\"}, {\"NO\": 33, \"CSR\": \"CSR\", \"KAB\": \"DLH, DKPP\", \"DESA\": \"DD\", \"PROV\": \"DLH\", \"SKOR\": 4, \"NILAI\": \"0.00190476\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"Pembangunan TPS danTPA Sampah \", \"ROW_CELL\": 42, \"INDIKATOR\": \"Skor Sampah\", \"KETERANGAN\": \"Warga desa membuang sampah di Lubang atau di Bakar\"}, {\"NO\": 34, \"CSR\": \"CSR\", \"KAB\": \"PU\", \"DESA\": \"DD\", \"PROV\": null, \"SKOR\": 4, \"NILAI\": \"0.00190476\", \"PUSAT\": \"PAMSIMAS, PU\", \"LAINNYA\": \"PDAM\", \"KEGIATAN\": \"Pemasangan PDAM/Air Ledeng Tanpa Meteran\", \"ROW_CELL\": 43, \"INDIKATOR\": \"Skor Air Minum\", \"KETERANGAN\": \"Sumber air minum berasal dari Sumur Bor/pompa, Sumur\"}, {\"NO\": 35, \"CSR\": \"CSR\", \"KAB\": \"PU\", \"DESA\": \"DD\", \"PROV\": null, \"SKOR\": 4, \"NILAI\": \"0.00190476\", \"PUSAT\": \"PAMSIMAS, PU\", \"LAINNYA\": \"PDAM\", \"KEGIATAN\": \"Pemasangan PDAM/Air Ledeng Tanpa Meteran\", \"ROW_CELL\": 44, \"INDIKATOR\": \"Skor Air Mandi & Cuci\", \"KETERANGAN\": \"Sumber air mandi dan cuci berasal dari Sumur Bor/pompa, Sumur\"}, {\"NO\": null, \"CSR\": null, \"KAB\": null, \"DESA\": null, \"PROV\": null, \"SKOR\": 0.92, \"NILAI\": null, \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": null, \"ROW_CELL\": 45, \"INDIKATOR\": \"IKS 2024\", \"KETERANGAN\": null}, {\"NO\": 1, \"CSR\": \"CSR\", \"KAB\": \"DISPERINDAKOP UKM\", \"DESA\": \"DD\", \"PROV\": \"DISPERINDAKOP UKM\", \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": \"Perorangan\", \"KEGIATAN\": \"-\", \"ROW_CELL\": 46, \"INDIKATOR\": \"Skor Keragaman Produksi\", \"KETERANGAN\": \"Jumlah Industri Mikro/ Jumlah KK ≥ 0,004\"}, {\"NO\": 2, \"CSR\": null, \"KAB\": \"DISPERINDAKOP UKM\", \"DESA\": null, \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": \"Perorangan, Swasta\", \"KEGIATAN\": \"-\", \"ROW_CELL\": 47, \"INDIKATOR\": \"Skor Pertokoan\", \"KETERANGAN\": \"Jarak ke kelompok pertokoan terdekat ≤ 7 KM\"}, {\"NO\": 3, \"CSR\": null, \"KAB\": \"DISPERINDAKOP UKM\", \"DESA\": null, \"PROV\": \"DISPERINDAKOP UKM\", \"SKOR\": 1, \"NILAI\": \"0.02222222\", \"PUSAT\": \"Kemenperind, Kemendes\", \"LAINNYA\": null, \"KEGIATAN\": \"Pembangunan Pasar Permanen\", \"ROW_CELL\": 48, \"INDIKATOR\": \"Skor Pasar\", \"KETERANGAN\": \"(Total KK/jumlah pasar(permanen)) = 0\"}, {\"NO\": 4, \"CSR\": null, \"KAB\": null, \"DESA\": \"DD\", \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": \"Perorangan\", \"KEGIATAN\": \"-\", \"ROW_CELL\": 49, \"INDIKATOR\": \"Skor Toko/ Warung Kelontong\", \"KETERANGAN\": \"Jumlah Toko dan warung kelontong > 3\"}, {\"NO\": 5, \"CSR\": null, \"KAB\": \"Dinas Pariwisata\", \"DESA\": \"DD\", \"PROV\": \"Dinas Pariwisata\", \"SKOR\": 3, \"NILAI\": \"0.01111111\", \"PUSAT\": null, \"LAINNYA\": \"Perorangan, Swasta\", \"KEGIATAN\": \"Pembangunan 1 Unit Penginapan\", \"ROW_CELL\": 50, \"INDIKATOR\": \"Skor Kedai & Penginapan\", \"KETERANGAN\": \"Jumlah Kedai dan Penginapan = 1\"}, {\"NO\": 6, \"CSR\": null, \"KAB\": null, \"DESA\": \"BUMDES\", \"PROV\": null, \"SKOR\": 3, \"NILAI\": \"0.01111111\", \"PUSAT\": null, \"LAINNYA\": \"Kantor Pos, Swasta\", \"KEGIATAN\": \"Pembangunan/Pengadaan Jasa logistik / kantor Pos (Identifikasi yang tidak ada)\", \"ROW_CELL\": 51, \"INDIKATOR\": \"Skor POS & Logistik\", \"KETERANGAN\": \"Jumlah pos dan jasa logistik = 1\"}, {\"NO\": 7, \"CSR\": null, \"KAB\": null, \"DESA\": null, \"PROV\": null, \"SKOR\": 0, \"NILAI\": \"0.02777778\", \"PUSAT\": null, \"LAINNYA\": \"Perbankan\", \"KEGIATAN\": \"Fasilitasi Pembangunan Bank Pemerintah, Swasta &/ BPR\", \"ROW_CELL\": 52, \"INDIKATOR\": \"Skor Bank & BPR\", \"KETERANGAN\": \"Jumlah bank dan BPR = 0\"}, {\"NO\": 8, \"CSR\": null, \"KAB\": \"DISPERINDAKOP UKM\", \"DESA\": \"BUMDES/ Koperasi\", \"PROV\": null, \"SKOR\": 4, \"NILAI\": \"0.00555556\", \"PUSAT\": null, \"LAINNYA\": \"Bank, Swasta\", \"KEGIATAN\": \"Penambahan 1 jenis Fasilitas Kredit (KUR/KKPE/KUK/Kredit lainnya)(Identifikasi kekurangan akses kredit)\", \"ROW_CELL\": 53, \"INDIKATOR\": \"Skor Kredit\", \"KETERANGAN\": \"Jumlah fasilitas kredit = 3\"}, {\"NO\": 9, \"CSR\": \"CSR\", \"KAB\": \"DISPERINDAKOP UKM\", \"DESA\": \"Desa\", \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 54, \"INDIKATOR\": \"Skor Lembaga Ekonomi\", \"KETERANGAN\": \"Jumlah koperasi aktif dan BUMDESA > 1\"}, {\"NO\": 10, \"CSR\": null, \"KAB\": \"DISHUB\", \"DESA\": null, \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 55, \"INDIKATOR\": \"Skor Moda Transportasi Umum\", \"KETERANGAN\": \"Transportasi Umum ada dengan trayek tetap\"}, {\"NO\": 11, \"CSR\": \"CSR\", \"KAB\": \"PU\", \"DESA\": \"DD\", \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 56, \"INDIKATOR\": \"Skor Keterbukaan Wilayah\", \"KETERANGAN\": \"Jalan di Desa dilalui oleh kendaraan bermotor roda empat atau lebih Sepanjang Tahun \"}, {\"NO\": 12, \"CSR\": \"CSR\", \"KAB\": \"PU\", \"DESA\": \"DD\", \"PROV\": null, \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 57, \"INDIKATOR\": \"Skor Kualitas Jalan\", \"KETERANGAN\": \"Jenis permukaan jalan desa Aspal atau beton\"}, {\"NO\": null, \"CSR\": null, \"KAB\": null, \"DESA\": null, \"PROV\": null, \"SKOR\": 0.76666666666667, \"NILAI\": null, \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": null, \"ROW_CELL\": 58, \"INDIKATOR\": \"IKE 2024\", \"KETERANGAN\": null}, {\"NO\": 1, \"CSR\": null, \"KAB\": \"DLH, DINKES\", \"DESA\": null, \"PROV\": \"DLH\", \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 59, \"INDIKATOR\": \"Skor Kualitas Lingkungan\", \"KETERANGAN\": \"Pencemaran (air, udara, tanah, limbah disungai) di desa [jumlah pencemaran/4] = 0\"}, {\"NO\": 2, \"CSR\": null, \"KAB\": \"BPBD\", \"DESA\": null, \"PROV\": \"DISHUT/KPH, BPDB\", \"SKOR\": 5, \"NILAI\": \"0\", \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": \"-\", \"ROW_CELL\": 60, \"INDIKATOR\": \"Skor Rawan Bencana\", \"KETERANGAN\": \"Jenis bencana (longsor, banjir, kebakaran hutan) jenis bencana di desa = 0\"}, {\"NO\": 3, \"CSR\": \"CSR\", \"KAB\": \"DPBD, DINSOS\", \"DESA\": \"DD\", \"PROV\": \"DISHUT/KPH, BPDB, DINSOS\", \"SKOR\": 4, \"NILAI\": \"0.02222222\", \"PUSAT\": \"BNPB, Kemendes\", \"LAINNYA\": null, \"KEGIATAN\": \"Pembangunan/Pengadaan 1 Fasilitas Mitigasi Bencana Sesuai karakteristik wilayah (Kebutuhan sesuai hasil identifikasi kerawanan/potensi bencana)\", \"ROW_CELL\": 61, \"INDIKATOR\": \"Skor Tanggap Bencana\", \"KETERANGAN\": \"Fasilitas mitigasi/tanggap bencana (peringatan dini bencana alam, peringatan dini tsunami, perlengkapan keselamatan, jalur evakuasi) jumlah fasilitas mitigasi / tanggap bencana = 2\"}, {\"NO\": null, \"CSR\": null, \"KAB\": null, \"DESA\": null, \"PROV\": null, \"SKOR\": 0.93333333333333, \"NILAI\": null, \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": null, \"ROW_CELL\": 62, \"INDIKATOR\": \"IKL 2024\", \"KETERANGAN\": null}, {\"NO\": null, \"CSR\": null, \"KAB\": null, \"DESA\": null, \"PROV\": null, \"SKOR\": 0.87333333333333, \"NILAI\": null, \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": null, \"ROW_CELL\": 63, \"INDIKATOR\": \"IDM 2024\", \"KETERANGAN\": null}, {\"NO\": null, \"CSR\": null, \"KAB\": null, \"DESA\": null, \"PROV\": null, \"SKOR\": \"Mandiri\", \"NILAI\": null, \"PUSAT\": null, \"LAINNYA\": null, \"KEGIATAN\": null, \"ROW_CELL\": 64, \"INDIKATOR\": \"STATUS IDM 2024\", \"KETERANGAN\": null}], \"IDENTITAS\": [{\"id_desa\": \"5203192002\", \"id_prov\": \"52\", \"nama_desa\": \"GUNUNG RAJAK\", \"id_kabupaten\": \"5203\", \"id_kecamatan\": \"520319\", \"nama_kab_kota\": \"LOMBOK TIMUR\", \"nama_provinsi\": \"NUSA TENGGARA BARAT\", \"nama_kecamatan\": \"SAKRA BARAT\"}], \"SUMMARIES\": {\"TAHUN\": 2024, \"STATUS\": \"MANDIRI\", \"PENAMBAHAN\": -0.05773333333332997, \"SKOR_MINIMAL\": \"0.8156\", \"SKOR_SAAT_INI\": 0.87333333333333, \"TARGET_STATUS\": \"MANDIRI\"}}}',
+        '2024-11-06 02:37:05',
+        '2024-11-06 02:37:05'
     );
 
 -- --------------------------------------------------------
@@ -22826,6 +22863,21 @@ VALUES (
         46,
         '2024_11_03_203117_create_surat_masuks_table',
         10
+    ),
+    (
+        47,
+        '2024_11_05_123252_create_surat_keputusans_table',
+        11
+    ),
+    (
+        48,
+        '2024_11_05_195228_create_peraturans_table',
+        12
+    ),
+    (
+        49,
+        '2024_11_06_010535_create_idms_table',
+        13
     );
 
 -- --------------------------------------------------------
@@ -24299,7 +24351,7 @@ CREATE TABLE `pengaturans` (
     `singkatan_kabupaten` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
     `singkatan_dusun` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
     `format_nomor_surat` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-    `zona_waktu` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `zona_waktu` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
     `title_web` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
     `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
     `created_at` timestamp NULL DEFAULT NULL,
@@ -24334,24 +24386,24 @@ INSERT INTO
     )
 VALUES (
         1,
-        'Kelurahan',
+        'Desa',
         'Kecamatan',
-        'Kota',
-        'Lingkungan',
-        'Lurah',
+        'Kabupate',
+        'Dusun',
+        'Kepala Desa',
         'Camat',
         'Bupati',
-        'Kepala Lingkungan',
-        'Kel.',
+        'Kepala Dusun',
+        'Desa.',
         'Kec.',
-        'Kota',
-        'Ling.',
+        'Kab.',
+        'Dusun',
         '[kode_surat]/[nomor_surat, 3]/PEM/[tahun]',
         'Asia/Pontianak',
         'Website Desa',
         'icons/SZ3oaj5JFVYY54QX6apvebZ6h4AP8K5snYiqUOJs.png',
         '2024-10-26 16:32:06',
-        '2024-11-05 04:44:23'
+        '2024-11-05 12:35:05'
     );
 
 -- --------------------------------------------------------
@@ -24401,6 +24453,73 @@ VALUES (
         'Lainnya',
         '2024-10-26 16:32:06',
         '2024-10-26 16:32:06'
+    );
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `peraturans`
+--
+
+CREATE TABLE `peraturans` (
+    `id` bigint UNSIGNED NOT NULL,
+    `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `jenis_peraturan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `uraian_singkat` text COLLATE utf8mb4_unicode_ci,
+    `tanggal_kesepakatan` date NOT NULL,
+    `nomor_tetapan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `tanggal_tetapan` date NOT NULL,
+    `nomor_dilaporkan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `tanggal_dilaporkan` date NOT NULL,
+    `nomor_lembaran_desa` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `tanggal_lembaran_desa` date NOT NULL,
+    `nomor_berita_desa` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `tanggal_berita_desa` date NOT NULL,
+    `dokumen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `created_at` timestamp NULL DEFAULT NULL,
+    `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `peraturans`
+--
+
+INSERT INTO
+    `peraturans` (
+        `id`,
+        `nama`,
+        `jenis_peraturan`,
+        `uraian_singkat`,
+        `tanggal_kesepakatan`,
+        `nomor_tetapan`,
+        `tanggal_tetapan`,
+        `nomor_dilaporkan`,
+        `tanggal_dilaporkan`,
+        `nomor_lembaran_desa`,
+        `tanggal_lembaran_desa`,
+        `nomor_berita_desa`,
+        `tanggal_berita_desa`,
+        `dokumen`,
+        `created_at`,
+        `updated_at`
+    )
+VALUES (
+        1,
+        'Peraturan Penetapan Anggaran Desa Tahun 2024',
+        'Anggaran Desa',
+        'Peraturan menetapkan tanggal dan mekanisme pencairan dana anggaran desa tahun 2024',
+        '2024-11-05',
+        '212-78',
+        '2024-11-05',
+        '22636-23',
+        '2024-11-05',
+        '12312-12',
+        '2024-11-05',
+        '1442-89',
+        '2024-11-05',
+        'dokumens/5PoHJhYEutveJNmqbjAKfWOZUwDkC9p77zOUCD7w.pdf',
+        '2024-11-05 12:51:19',
+        '2024-11-05 14:37:31'
     );
 
 -- --------------------------------------------------------
@@ -25196,13 +25315,13 @@ VALUES (
 
 CREATE TABLE `surat_keluars` (
     `id` bigint UNSIGNED NOT NULL,
-    `nomor_urut` varchar(25) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-    `nomor_surat` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `nomor_urut` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `nomor_surat` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
     `klasifikasi_surat_id` bigint UNSIGNED DEFAULT NULL,
     `tanggal_surat` date NOT NULL,
     `tujuan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-    `perihal` text COLLATE utf8mb4_unicode_ci,
-    `dokumen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `perihal` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    `dokumen` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
     `created_at` timestamp NULL DEFAULT NULL,
     `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
@@ -25240,21 +25359,73 @@ VALUES (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `surat_keputusans`
+--
+
+CREATE TABLE `surat_keputusans` (
+    `id` bigint UNSIGNED NOT NULL,
+    `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `nomor_keputusan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `tanggal_keputusan` date NOT NULL,
+    `nomor_dilaporkan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `tanggal_dilaporkan` date NOT NULL,
+    `uraian_singkat` text COLLATE utf8mb4_unicode_ci NOT NULL,
+    `keterangan` longtext COLLATE utf8mb4_unicode_ci,
+    `dokumen` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+    `created_at` timestamp NULL DEFAULT NULL,
+    `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `surat_keputusans`
+--
+
+INSERT INTO
+    `surat_keputusans` (
+        `id`,
+        `nama`,
+        `nomor_keputusan`,
+        `tanggal_keputusan`,
+        `nomor_dilaporkan`,
+        `tanggal_dilaporkan`,
+        `uraian_singkat`,
+        `keterangan`,
+        `dokumen`,
+        `created_at`,
+        `updated_at`
+    )
+VALUES (
+        1,
+        'Pemberian Bantuan Langsung Tunai Dana Desa',
+        '1102-236',
+        '2024-11-05',
+        '22636-23',
+        '2024-11-05',
+        'Keputusan tanggal pelaksanaan pemberian Bantuan Langsung Tunai Dana Desa',
+        NULL,
+        'dokumens/HBkRADHtxT1g10udGbydmLtEf9z1PYygZxfTNUHL.pdf',
+        '2024-11-05 05:13:46',
+        '2024-11-05 10:20:52'
+    );
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `surat_masuks`
 --
 
 CREATE TABLE `surat_masuks` (
     `id` bigint UNSIGNED NOT NULL,
-    `nomor_urut` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-    `nomor_surat` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `nomor_urut` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    `nomor_surat` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
     `klasifikasi_surat_id` bigint UNSIGNED DEFAULT NULL,
     `tanggal_surat` date NOT NULL,
     `tanggal_catat` timestamp NOT NULL,
-    `pengirim` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-    `perihal` text COLLATE utf8mb4_unicode_ci,
+    `pengirim` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `perihal` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
     `pamong_id` json DEFAULT NULL,
-    `isi_disposisi` text COLLATE utf8mb4_unicode_ci,
-    `dokumen` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+    `isi_disposisi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+    `dokumen` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
     `created_at` timestamp NULL DEFAULT NULL,
     `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
@@ -25513,6 +25684,11 @@ ALTER TABLE `golongan_darahs` ADD PRIMARY KEY (`id`);
 ALTER TABLE `hubungan_keluargas` ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `idms`
+--
+ALTER TABLE `idms` ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `jabatans`
 --
 ALTER TABLE `jabatans` ADD PRIMARY KEY (`id`);
@@ -25612,6 +25788,11 @@ ALTER TABLE `pengaturans` ADD PRIMARY KEY (`id`);
 ALTER TABLE `penolong_kelahirans` ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `peraturans`
+--
+ALTER TABLE `peraturans` ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
@@ -25676,6 +25857,11 @@ ALTER TABLE `status_rekam_ktps` ADD PRIMARY KEY (`id`);
 -- Indexes for table `surat_keluars`
 --
 ALTER TABLE `surat_keluars` ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `surat_keputusans`
+--
+ALTER TABLE `surat_keputusans` ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `surat_masuks`
@@ -25782,6 +25968,13 @@ MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
 AUTO_INCREMENT = 12;
 
 --
+-- AUTO_INCREMENT for table `idms`
+--
+ALTER TABLE `idms`
+MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+AUTO_INCREMENT = 2;
+
+--
 -- AUTO_INCREMENT for table `jabatans`
 --
 ALTER TABLE `jabatans`
@@ -25856,7 +26049,7 @@ AUTO_INCREMENT = 2336;
 --
 ALTER TABLE `migrations`
 MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-AUTO_INCREMENT = 47;
+AUTO_INCREMENT = 50;
 
 --
 -- AUTO_INCREMENT for table `pamongs`
@@ -25906,6 +26099,13 @@ AUTO_INCREMENT = 2;
 ALTER TABLE `penolong_kelahirans`
 MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
 AUTO_INCREMENT = 5;
+
+--
+-- AUTO_INCREMENT for table `peraturans`
+--
+ALTER TABLE `peraturans`
+MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+AUTO_INCREMENT = 2;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -25989,6 +26189,13 @@ AUTO_INCREMENT = 9;
 ALTER TABLE `surat_keluars`
 MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
 AUTO_INCREMENT = 5;
+
+--
+-- AUTO_INCREMENT for table `surat_keputusans`
+--
+ALTER TABLE `surat_keputusans`
+MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+AUTO_INCREMENT = 2;
 
 --
 -- AUTO_INCREMENT for table `surat_masuks`
