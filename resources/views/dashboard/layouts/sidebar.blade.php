@@ -1,8 +1,8 @@
 <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
     <div class="sidebar-brand">
-        <a href="{{ route('dashboard.index') }}" class="brand-link">
+        <a href="{{ route('dashboard.index') }}" class="brand-link text-center">
             {{-- <img src="../../dist/assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image opacity-75 shadow"> --}}
-            <span class="brand-text ms-0 font-outfit">{{ config('app.alias') }}</span>
+            <span class="brand-text ms-0 font-outfit text-uppercase text-xs">{{ config('app.name') }}</span>
         </a>
     </div>
     <div class="sidebar-wrapper">
@@ -89,6 +89,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
+                            <a href="{{ route('idm.index') }}"
+                                class="nav-link {{ request()->segment(2) == 'idm' ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-pie-chart-fill"></i>
+                                <p>Index Desa Membangun</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('statistik.index') }}"
                                 class="nav-link {{ request()->segment(2) == 'kependudukan' ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-bar-chart-fill"></i>
@@ -163,6 +170,12 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon bi bi-boxes"></i>
+                                <p>Inventaris</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('jabatan.index') }}"
                                 class="nav-link {{ request()->segment(2) == 'jabatan' ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-award"></i>
@@ -170,25 +183,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('surat-masuk.index') }}"
-                                class="nav-link {{ request()->segment(2) == 'surat-masuk' ? 'active' : '' }}">
-                                <i class="nav-icon bi bi-file-earmark-arrow-down"></i>
-                                <p>Surat Masuk</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('surat-keluar.index') }}"
-                                class="nav-link {{ request()->segment(2) == 'surat-keluar' ? 'active' : '' }}">
-                                <i class="nav-icon bi bi-file-earmark-arrow-up"></i>
-                                <p>Surat Keluar</p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{ route('surat-keputusan.index') }}"
-                                class="nav-link {{ request()->segment(2) == 'surat-keputusan' ? 'active' : '' }}">
-                                <i class="nav-icon bi bi-award"></i>
-                                <p>Surat Keputusan</p>
+                            <a href="{{ route('klasifikasi-surat.index') }}"
+                                class="nav-link {{ request()->segment(2) == 'klasifikasi-surat' ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-tags"></i>
+                                <p>Klasifikasi Surat</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -199,16 +197,24 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon bi bi-boxes"></i>
-                                <p>Inventaris</p>
+                            <a href="{{ route('surat-keluar.index') }}"
+                                class="nav-link {{ request()->segment(2) == 'surat-keluar' ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-file-earmark-arrow-up"></i>
+                                <p>Surat Keluar</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('klasifikasi-surat.index') }}"
-                                class="nav-link {{ request()->segment(2) == 'klasifikasi-surat' ? 'active' : '' }}">
-                                <i class="nav-icon bi bi-tags"></i>
-                                <p>Klasifikasi Surat</p>
+                            <a href="{{ route('surat-keputusan.index') }}"
+                                class="nav-link {{ request()->segment(2) == 'surat-keputusan' ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-award"></i>
+                                <p>Surat Keputusan</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('surat-masuk.index') }}"
+                                class="nav-link {{ request()->segment(2) == 'surat-masuk' ? 'active' : '' }}">
+                                <i class="nav-icon bi bi-file-earmark-arrow-down"></i>
+                                <p>Surat Masuk</p>
                             </a>
                         </li>
                     </ul>
