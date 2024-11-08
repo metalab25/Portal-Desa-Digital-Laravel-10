@@ -13,9 +13,18 @@ class IdmController extends Controller
     {
         $data = Idm::first();
         $data = json_decode($data['data'], true)['mapData']['ROW'];
+
+        $sorted_keys = ["NO","INDIKATOR","SKOR","KETERANGAN","KEGIATAN","NILAI","PUSAT","PROV","KAB","DESA","CSR","LAINNYA","ROW_CELL"];
+        $sorted = [];
+        foreach ($data as $index => $row) {
+            foreach ($sorted_keys as $k) {
+                $sorted[$index][$k] = $row[$k];
+            }
+        }
+
         return view('dashboard.idm.index', [
             'page'  => 'Index Desa Membangun',
-            'data'   => $data
+            'data'   => $sorted
         ]);
     }
 
