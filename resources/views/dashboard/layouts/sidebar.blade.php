@@ -92,7 +92,7 @@
                             <a href="{{ route('idm.index') }}"
                                 class="nav-link {{ request()->segment(2) == 'idm' ? 'active' : '' }}">
                                 <i class="nav-icon bi bi-pie-chart-fill"></i>
-                                <p>Index Desa Membangun</p>
+                                <p>Indeks Desa Membangun</p>
                             </a>
                         </li>
                         <li class="nav-item">

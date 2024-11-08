@@ -37,7 +37,7 @@ class IdmController extends Controller
         $chart_idm = array_slice($data_idm, 0, 3);
 
         return view('dashboard.idm.index', [
-            'page'      => 'Index Desa Membangun',
+            'page'      => 'Indeks Desa Membangun',
             'data'      => $data,
             'data'      => $sorted,
             'idmSkor'   => $data_idm,
