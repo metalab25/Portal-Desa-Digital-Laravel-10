@@ -6,7 +6,14 @@
             <div class="card rounded-3 mb-3 shadow">
                 <div class="card-header">
                     <div class="float-end">
-                        <a href="{{ route('idm.fetch') }}" class="btn btn-primary btn-block btn-sm">Fetch Data</a>
+                        <select name="tahun" id="tahun" class="form-control form-select"
+                            onchange="fetchDataByYear(this.value)">
+                            <option value="">-- Pilih Tahun --</option>
+                            @foreach ($years as $year)
+                                <option value="{{ $year }}" {{ $year == $selectedYear ? 'selected' : '' }}>
+                                    {{ $year }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="card-body">
@@ -31,11 +38,31 @@
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <?php foreach ($data[0] as $key => $value): ?>
-                                    <th>
-                                        <?= $key ?>
+                                    <th class="text-center align-middle bg-secondary text-white text-uppercase"
+                                        rowspan="2">No.</th>
+                                    <th class="text-center align-middle bg-secondary text-white text-uppercase"
+                                        rowspan="2">Indikator
                                     </th>
-                                    <?php endforeach; ?>
+                                    <th class="text-center align-middle bg-secondary text-white text-uppercase"
+                                        rowspan="2">Skor</th>
+                                    <th class="text-center align-middle bg-secondary text-white text-uppercase"
+                                        rowspan="2">Keterangan
+                                    </th>
+                                    <th class="text-center align-middle bg-secondary text-white text-uppercase"
+                                        rowspan="2">Kegiatan
+                                    </th>
+                                    <th class="text-center align-middle bg-secondary text-white text-uppercase"
+                                        rowspan="2">Nilai</th>
+                                    <th class="text-center align-middle bg-secondary text-white text-uppercase"
+                                        colspan="6">Yang Melaksanakan Kegiatan</th>
+                                </tr>
+                                <tr>
+                                    <th class="text-center align-middle bg-secondary text-white text-uppercase">Pusat</th>
+                                    <th class="text-center align-middle bg-secondary text-white text-uppercase">Prov</th>
+                                    <th class="text-center align-middle bg-secondary text-white text-uppercase">Kab</th>
+                                    <th class="text-center align-middle bg-secondary text-white text-uppercase">Desa</th>
+                                    <th class="text-center align-middle bg-secondary text-white text-uppercase">CSR</th>
+                                    <th class="text-center align-middle bg-secondary text-white text-uppercase">Lainnya</th>
                                 </tr>
                             </thead>
                             <?php foreach ($data as $baris): ?>
@@ -56,11 +83,38 @@
 @endsection
 
 @push('script')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
     <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
     <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 
     <script>
+        $(function() {
+            $('body').addClass('sidebar-collapse');
+        });
+
+        function fetchDataByYear(year) {
+            if (year) {
+                fetch(`/statistik/idm/fetch/${year}`, {
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.error) {
+                            alert(data.error);
+                        } else {
+                            location.href = `/statistik/idm?tahun=${year}`;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Gagal memuat data');
+                    });
+            }
+        }
+
         am4core.ready(function() {
             // Menggunakan tema animasi
             am4core.useTheme(am4themes_animated);
