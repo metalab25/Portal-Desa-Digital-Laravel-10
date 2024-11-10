@@ -94,25 +94,25 @@
         });
 
         function fetchDataByYear(year) {
-            if (year) {
-                fetch(`/statistik/idm/fetch/${year}`, {
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.error) {
-                            alert(data.error);
-                        } else {
-                            location.href = `/statistik/idm?tahun=${year}`;
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        alert('Gagal memuat data');
-                    });
-            }
+            if (!year) return
+            fetch(`/statistik/idm/fetch/${year}`, {
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(
+                    response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        location.href = `/statistik/idm?tahun=${year}`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Gagal memuat data');
+                });
         }
 
         am4core.ready(function() {
