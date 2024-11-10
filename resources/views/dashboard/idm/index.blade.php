@@ -17,6 +17,62 @@
                     </div>
                 </div>
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box text-bg-success rounded-3">
+                                <div class="inner p-3">
+                                    <h4 class="font-outfit text-bold">{{ $idmSkor[0]['INDIKATOR'] }}</h4>
+                                    <h6 class="font-outfit">{{ round($idmSkor[0]['SKOR'], 4) }}</h6>
+                                </div>
+                                <svg class="small-box-icon" fill="currentColor" viewBox="0 0 17 18"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box text-bg-primary rounded-3">
+                                <div class="inner p-3">
+                                    <h4 class="font-outfit text-bold">{{ $idmSkor[1]['INDIKATOR'] }}</h4>
+                                    <h6 class="font-outfit">{{ round($idmSkor[1]['SKOR'], 4) }}</h6>
+                                </div>
+                                <svg class="small-box-icon" fill="currentColor" viewBox="0 0 17 18"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path
+                                        d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box text-bg-warning rounded-3">
+                                <div class="inner p-3">
+                                    <h4 class="font-outfit text-bold">{{ $idmSkor[2]['INDIKATOR'] }}</h4>
+                                    <h6 class="font-outfit">{{ round($idmSkor[2]['SKOR'], 4) }}</h6>
+                                </div>
+                                <svg class="small-box-icon" fill="currentColor" viewBox="0 0 17 18"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box text-bg-danger rounded-3">
+                                <div class="inner p-3">
+                                    <h4 class="font-outfit text-bold">{{ $idmSkor[3]['INDIKATOR'] }}</h4>
+                                    <h6 class="font-outfit">{{ round($idmSkor[3]['SKOR'], 4) }}</h6>
+                                </div>
+                                <svg class="small-box-icon" fill="currentColor" viewBox="0 0 17 18"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path
+                                        d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5" />
+                                    <path
+                                        d="M4.085 1H3.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1h-.585q.084.236.085.5V2a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 4 2v-.5q.001-.264.085-.5M9.98 5.356 11.372 10h.128a.5.5 0 0 1 0 1H11a.5.5 0 0 1-.479-.356l-.94-3.135-1.092 5.096a.5.5 0 0 1-.968.039L6.383 8.85l-.936 1.873A.5.5 0 0 1 5 11h-.5a.5.5 0 0 1 0-1h.191l1.362-2.724a.5.5 0 0 1 .926.08l.94 3.135 1.092-5.096a.5.5 0 0 1 .968-.039Z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <table class="table table-striped">
@@ -24,7 +80,9 @@
                                     <tr>
                                         <td>{{ $item['INDIKATOR'] ?? '-' }}</td>
                                         <td>:</td>
-                                        <td>{{ $item['SKOR'] ?? '-' }}</td>
+                                        <td>
+                                            {{ $item['SKOR'] ?? '-' }}
+                                        </td>
                                     </tr>
                                 @endforeach
                             </table>
@@ -62,7 +120,8 @@
                                     <th class="text-center align-middle bg-secondary text-white text-uppercase">Kab</th>
                                     <th class="text-center align-middle bg-secondary text-white text-uppercase">Desa</th>
                                     <th class="text-center align-middle bg-secondary text-white text-uppercase">CSR</th>
-                                    <th class="text-center align-middle bg-secondary text-white text-uppercase">Lainnya</th>
+                                    <th class="text-center align-middle bg-secondary text-white text-uppercase">Lainnya
+                                    </th>
                                 </tr>
                             </thead>
                             <?php foreach ($data as $baris): ?>
@@ -101,7 +160,7 @@
                     }
                 })
                 .then(
-                    response => response.json())
+                    location.href = `/statistik/idm?tahun=${year}`)
                 .then(data => {
                     if (data.error) {
                         alert(data.error);
@@ -110,27 +169,21 @@
                     }
                 })
                 .catch(error => {
-                    console.error('Error:', error);
                     alert('Gagal memuat data');
                 });
         }
 
         am4core.ready(function() {
-            // Menggunakan tema animasi
             am4core.useTheme(am4themes_animated);
 
-            // Membuat chart
             var chart = am4core.create("idm3DPieChart", am4charts.PieChart3D);
-            chart.hiddenState.properties.opacity = 0; // Grafik muncul dengan animasi
+            chart.hiddenState.properties.opacity = 0;
 
-            // Menambahkan data dari PHP
             chart.data = @json($idmChart);
 
-            // Mengatur tampilan chart
             chart.innerRadius = am4core.percent(50);
             chart.depth = 20;
 
-            // Series
             var series = chart.series.push(new am4charts.PieSeries3D());
             series.dataFields.value = "SKOR";
             series.dataFields.category = "INDIKATOR";
