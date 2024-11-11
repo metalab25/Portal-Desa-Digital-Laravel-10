@@ -136,3 +136,7 @@ Route::resource('/administrasi/surat-keputusan', SuratKeputusanController::class
 // Peraturan
 Route::get('/administrasi/peraturan/cetak', [PeraturanController::class, 'cetak'])->name('peraturan.cetak')->middleware('auth');
 Route::resource('/administrasi/peraturan', PeraturanController::class)->middleware('auth');
+
+// Keuangan -> Sumber Dana
+Route::post('/keuangan/sumber-dana/anggaran/add', [KeuanganSumberDanaController::class, 'addAnggaran'])->name('sumber-dana.add-anggaran')->middleware('auth');
+Route::resource('/keuangan/sumber-dana', KeuanganSumberDanaController::class)->middleware('auth');
