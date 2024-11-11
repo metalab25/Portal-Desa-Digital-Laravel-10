@@ -5,6 +5,7 @@ use App\Models\Keluarga;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RtController;
 use App\Http\Controllers\RwController;
+use App\Http\Controllers\IdmController;
 use App\Http\Controllers\DusunController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PamongController;
@@ -15,17 +16,17 @@ use App\Http\Controllers\KelompokController;
 use App\Http\Controllers\KeluargaController;
 use App\Http\Controllers\PendudukController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PeraturanController;
 use App\Http\Controllers\StatistikController;
 use App\Http\Controllers\PengaturanController;
 use App\Http\Controllers\SuratMasukController;
 use App\Http\Controllers\SuratKeluarController;
+use App\Http\Controllers\SuratKeputusanController;
 use App\Http\Controllers\BantuanPenerimaController;
-use App\Http\Controllers\IdmController;
 use App\Http\Controllers\KelompokAnggotaController;
 use App\Http\Controllers\KelompokKategoriController;
 use App\Http\Controllers\KlasifikasiSuratController;
-use App\Http\Controllers\PeraturanController;
-use App\Http\Controllers\SuratKeputusanController;
+use App\Http\Controllers\KeuanganSumberDanaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -138,5 +139,6 @@ Route::get('/administrasi/peraturan/cetak', [PeraturanController::class, 'cetak'
 Route::resource('/administrasi/peraturan', PeraturanController::class)->middleware('auth');
 
 // Keuangan -> Sumber Dana
+Route::post('/keuangan/sumber-dana/realisasi/add', [KeuanganSumberDanaController::class, 'addRealisasi'])->name('sumber-dana.add-realisasi')->middleware('auth');
 Route::post('/keuangan/sumber-dana/anggaran/add', [KeuanganSumberDanaController::class, 'addAnggaran'])->name('sumber-dana.add-anggaran')->middleware('auth');
 Route::resource('/keuangan/sumber-dana', KeuanganSumberDanaController::class)->middleware('auth');

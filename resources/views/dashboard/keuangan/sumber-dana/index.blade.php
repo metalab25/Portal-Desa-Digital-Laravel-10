@@ -22,6 +22,10 @@
                             data-bs-target="#modal-create-anggaran">
                             Tambah Anggaran
                         </button>
+                        <button type="button" class="btn btn-warning btn-block btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#modal-create-realisasi">
+                            Tambah Realisasi
+                        </button>
                     </div>
                 </div>
                 <div class="card-body">
@@ -29,17 +33,19 @@
                         <table class="table table-striped table-bordered mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-center align-middle" colspan="3" rowspan="2">Uraian</th>
-                                    <th class="text-center align-middle">Anggaran</th>
-                                    <th class="text-center align-middle">Realisasi</th>
-                                    <th class="text-center align-middle">Lebih/Kurang</th>
-                                    <th class="text-center align-middle">Persentase</th>
+                                    <th class="text-center align-middle bg-darkblue py-1" colspan="3" rowspan="2">
+                                        Uraian
+                                    </th>
+                                    <th class="text-center align-middle bg-darkblue py-1">Anggaran</th>
+                                    <th class="text-center align-middle bg-darkblue py-1">Realisasi</th>
+                                    <th class="text-center align-middle bg-darkblue py-1">Lebih/Kurang</th>
+                                    <th class="text-center align-middle bg-darkblue py-1">Persentase</th>
                                 </tr>
                                 <tr>
-                                    <th class="text-center align-middle">(Rp)</th>
-                                    <th class="text-center align-middle">(Rp)</th>
-                                    <th class="text-center align-middle">(Rp)</th>
-                                    <th class="text-center align-middle">(%)</th>
+                                    <th class="text-center align-middle bg-darkblue py-1">(Rp)</th>
+                                    <th class="text-center align-middle bg-darkblue py-1">(Rp)</th>
+                                    <th class="text-center align-middle bg-darkblue py-1">(Rp)</th>
+                                    <th class="text-center align-middle bg-darkblue py-1">(%)</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -78,32 +84,32 @@
                                             <td class="align-middle text-end" width="5%">{{ $item->kode }}</td>
                                             <td class="align-middle text-bold" colspan="2">{{ $item->nama }}</td>
                                             <td class="align-middle text-end text-bold">
-                                                {{ number_format($totalAnggaran, 2, ',', '.') }}
+                                                {{ format_uang($totalAnggaran, 2, ',', '.') }}
                                             </td>
                                             <td class="align-middle text-end text-bold">
-                                                {{ number_format($totalRealisasi, 2, ',', '.') }}
+                                                {{ format_uang($totalRealisasi, 2, ',', '.') }}
                                             </td>
                                             <td class="align-middle text-end text-bold">
-                                                {{ number_format($totalSelisih, 2, ',', '.') }}
+                                                {{ format_uang($totalSelisih, 2, ',', '.') }}
                                             </td>
                                             <td class="align-middle text-end text-bold">
-                                                {{ number_format($totalPersentase, 2, ',', '.') }}%
+                                                {{ format_uang($totalPersentase, 2, ',', '.') }}%
                                             </td>
                                         @elseif($item->tipe == 3)
                                             <td width="5%"></td>
                                             <td class="align-middle text-end" width="5%">{{ $item->kode }}</td>
                                             <td class="align-middle">{{ $item->nama }}</td>
                                             <td class="align-middle text-end">
-                                                {{ number_format($item->nilai_anggaran, 2, ',', '.') }}
+                                                {{ format_uang($item->nilai_anggaran, 2, ',', '.') }}
                                             </td>
                                             <td class="align-middle text-end">
-                                                {{ number_format($item->nilai_realisasi, 2, ',', '.') }}
+                                                {{ format_uang($item->nilai_realisasi, 2, ',', '.') }}
                                             </td>
                                             <td class="align-middle text-end">
-                                                {{ number_format($selisih, 2, ',', '.') }}
+                                                {{ format_uang($selisih, 2, ',', '.') }}
                                             </td>
                                             <td class="align-middle text-end">
-                                                {{ number_format($persentase, 2, ',', '.') }}%
+                                                {{ format_uang($persentase, 2, ',', '.') }}%
                                             </td>
                                         @else
                                             <td class="align-middle text-uppercase text-bold letter-spacing-1"
@@ -125,4 +131,5 @@
     @include('dashboard.keuangan.sumber-dana.add-ii')
     @include('dashboard.keuangan.sumber-dana.add-iii')
     @include('dashboard.keuangan.sumber-dana.add-anggaran')
+    @include('dashboard.keuangan.sumber-dana.add-realisasi')
 @endsection

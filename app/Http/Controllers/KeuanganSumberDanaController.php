@@ -94,6 +94,21 @@ class KeuanganSumberDanaController extends Controller
         return redirect()->route('sumber-dana.index');
     }
 
+    public function addRealisasi(Request $request, KeuanganSumberDana $keuanganSumberDana)
+    {
+        $validatedData = $request->validate([
+            'nilai_realisasi'    =>  'required',
+        ]);
+
+        $validatedData['tahun'] = date('Y');
+
+        KeuanganSumberDana::where('id', $request->id)
+            ->update($validatedData);
+
+        Alert::success('Success', 'Data nilai realisasi berhasil ditambahkan');
+        return redirect()->route('sumber-dana.index');
+    }
+
     /**
      * Remove the specified resource from storage.
      */
